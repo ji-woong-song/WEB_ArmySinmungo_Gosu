@@ -23,39 +23,31 @@ import os
 import requests
 import base64
 import json
-import logging
-import time
 import pymysql
-import psycopg2 as pg2
 import csv
 
+#input dbinfo using DBinfo.py
+import DBinfo
+
 #RDS info (AWS RDS)
-rds_host = "http://armysinmungo.cabw8bx503cg.ap-northeast-2.rds.amazonaws.com/"
-rds_port = 3306
-rds_dbname = 'armysinmungo'
-rds_username = 'admin'
-rds_password = 'hackathon'
+rds_host, rds_port, rds_dbname, rds_username, rds_password = DBinfo.info_in()
 
 #connecting rds
-def connect_RDS(host, port, username, password, dbname):
+def connect_RDB(host, port, username, password, dbname):
     try:
-        connection = pg2.connect(database=dbname,host=host,port=port,user=username,password=password)
-        cursor = connection.cursor
-        print("Success")
+        connection = pymysql.connect(host=host,user=username,passwd=password,db=dbname,port=port,use_unicode=True,charset='utf8')
+        cursor = connection.cursor()
     except:
-        print("Fail")
+        print("Error")
         exit()
     return connection, cursor
 
-def connect_RDS1(host, port, username, password, dbname):
-    try:
-        connection = pymysql.connect(host=host, user = username, passwd=password,db=dbname,port=port,use_unicode=True,charset='utf8')
-        cursor = connection.cursor
-        print("Success1")
-    except:
-        print("Fail1")
-        exit()
-    return connection, cursor
+conn, cursor = connect_RDB(rds_host, rds_port, rds_username, rds_password, rds_dbname)
 
-dbconn, cursor = connect_RDS(rds_host,rds_port,rds_username,rds_password,rds_dbname)
+"""
+sqlline = 'SELECT * FROM USER_INFO'
 
+cursor.execute()
+data = cursor.fetchall()
+print(data)
+"""
