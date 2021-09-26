@@ -38,7 +38,6 @@ def analysis_sentiment(response):
     neg_num = 0
     pos_num = 0
     neu_num = 0
-    document = response['document']
     sentences = response['sentences']
     for sentence in sentences:
         if sentence['sentiment'] == 'positive':
