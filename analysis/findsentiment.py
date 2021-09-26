@@ -25,7 +25,6 @@ def get_sentiment(content):
             "content" : content
         }
 
-    json.dumps(data, indent=4, sort_keys=True)
     response = requests.post(url, data=json.dumps(data), headers=header)
     rescode = response.status_code
     if(rescode == 200):
