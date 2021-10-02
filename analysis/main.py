@@ -25,13 +25,11 @@ branch_unit2 = '2'
 #DB open
 conn, cursor = connectDB.connect_RDB(DBinfo.rds_host,DBinfo.rds_port,DBinfo.rds_username,DBinfo.rds_password,DBinfo.rds_dbname)
 
-#load keywords have to founded
-keywordfindlist = SQL.keyword_selection(cursor, unit, branch_unit1,branch_unit2)
 
 # #load content_board
 # content_data = SQL.post_selection('free',cursor,unit,branch_unit1,branch_unit2)
 
-# #analysis_1 : posnegneu
+#analysis_1 : posnegneu
 # pos_num = 0
 # neg_num = 0
 # neu_num = 0
@@ -60,3 +58,35 @@ keywordfindlist = SQL.keyword_selection(cursor, unit, branch_unit1,branch_unit2)
 # #insert_1 : posnegneu
 # SQL.analysis_posnegneu_insertion(conn,cursor,unit,branch_unit1,branch_unit2,pos_percent,neg_percent,neu_percent)
 
+
+# #analysis_2 : keywordranking
+# keytags = ['NNG','NNP','NP','VV']
+# morphemescount = dict()
+# rankdict = dict()
+# for data in content_data:
+#     title = data['title']
+#     content = data['content']
+#     datamorphemes, datamorphemescount = morphemeanalysis.pcs_morphemes(title+' '+content,keytags)
+#     for i in datamorphemescount:
+#         if i in morphemescount.keys():
+#             morphemescount[i] = morphemescount[i] + datamorphemescount[i]
+#         else:
+#             morphemescount[i] = datamorphemescount[i]
+# morphemescount = morphemeanalysis.reverse_dict(morphemescount)
+  
+# count = 0
+# for key in sorted(morphemescount.keys(),reverse=True):
+#     for values in morphemescount[key]:
+#         count = count + 1
+#         if count <= 10:
+#             rankdict[count] = [values, key]
+#         else:
+#             break
+
+
+# #insert_2 : keywordranking
+# SQL.analysis_morphemerank_insertion(conn,cursor,unit,branch_unit1,branch_unit2,rankdict)
+    
+
+# #load keywords have to founded
+# keywordfindlist = SQL.keyword_selection(cursor, unit, branch_unit1,branch_unit2)

@@ -59,16 +59,26 @@ sqllineka = """CREATE TABLE analysis_keyword_all (
             unit_code int NOT NULL,
             branch_unit1 varchar(255) NOT NULL,
             branch_unit2 varchar(255),
-            keyword_1 varchar(100) NOT NULL,
-            keyword_2 varchar(100) NOT NULL,
-            keyword_3 varchar(100) NOT NULL,
-            keyword_4 varchar(100) NOT NULL,
-            keyword_5 varchar(100) NOT NULL,
-            keyword_6 varchar(100) NOT NULL,
-            keyword_7 varchar(100) NOT NULL,
-            keyword_8 varchar(100) NOT NULL,
-            keyword_9 varchar(100) NOT NULL,
-            keyword_10 varchar(100) NOT NULL,
+            keyword_1 varchar(255) NOT NULL,
+            keyword_2 varchar(255) NOT NULL,
+            keyword_3 varchar(255) NOT NULL,
+            keyword_4 varchar(255) NOT NULL,
+            keyword_5 varchar(255) NOT NULL,
+            keyword_6 varchar(255) NOT NULL,
+            keyword_7 varchar(255) NOT NULL,
+            keyword_8 varchar(255) NOT NULL,
+            keyword_9 varchar(255) NOT NULL,
+            keyword_10 varchar(255) NOT NULL,
+            num_1 smallint unsigned default 0,
+            num_2 smallint unsigned default 0,
+            num_3 smallint unsigned default 0,
+            num_4 smallint unsigned default 0,
+            num_5 smallint unsigned default 0,
+            num_6 smallint unsigned default 0,
+            num_7 smallint unsigned default 0,
+            num_8 smallint unsigned default 0,
+            num_9 smallint unsigned default 0,
+            num_10 smallint unsigned default 0,
             PRIMARY KEY(analysis_keyword_all_id)
             ) ENGINE = InnoDB CHARSET=utf8;"""
 
@@ -114,5 +124,5 @@ sqlinsert_user_info = '''insert into user_info (id, birth, branch_unit1, branch_
 sqlinsert_anal_keyset = '''insert into analysis_attention_keywords (analysis_attention_keywords_id, unit_code, branch_unit1, branch_unit2, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10)
                 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
 
-cursor.execute('select * from analysis_posnegneu')
+cursor.execute('select * from analysis_keyword_all')
 SELECT_print_well(cursor.fetchall())

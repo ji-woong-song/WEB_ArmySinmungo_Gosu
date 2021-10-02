@@ -46,9 +46,12 @@ def keyword_selection(cursor, unit, branch_unit1, branch_unit2):
         return False
 
 #insert analysis result into DB (keyword ranking(morphemeanalysis))
-def analysis_morphemerank_insertion(conn, cursor, unit_code, branch_unit1, branch_unit2, keywordlist):
-    sqlline = '''insert into analysis_keyword_all (unit_code, branch_unit1, branch_unit2, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10) values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
-    cursor.execute(sqlline,(unit_code,branch_unit1,branch_unit2)+tuple(keywordlist))
+def analysis_morphemerank_insertion(conn, cursor, unit_code, branch_unit1, branch_unit2, keyworddict):
+    sqlline = '''insert into analysis_keyword_all (analysis_keyword_all_id, unit_code, branch_unit1, branch_unit2, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10, num_1, num_2, num_3, num_4, num_5, num_6, num_7, num_8, num_9, num_10) 
+                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
+    cursor.execute(sqlline,('1',unit_code,branch_unit1,branch_unit2,
+                    keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
+                    keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
     conn.commit()
     return True
 #### 튜플로 가능하려나...? 확인필요
