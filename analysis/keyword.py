@@ -42,11 +42,11 @@ def recognition(sentences, keywords):
 
     return recognizelist, recognize
 
-#example
-example = "너무 자살하고 싶다, 죽고싶어 진짜. 너무 힘들어"
-keywordset = ['자살', '힘들다', '죽다']
-treated_keywordset = pre_treat_keyword(keywordset)
-recongizelist, recognize= recognition(example, treated_keywordset)
-print(treated_keywordset)
-print(recongizelist)
-print(recognize)
+# #example
+# example = "너무 자살하고 싶다, 죽고싶어 진짜. 너무 힘들어"
+# keywordset = ['자살', '힘들다', '죽다']
+# treated_keywordset = pre_treat_keyword(keywordset)
+# recongizelist, recognize= recognition(example, treated_keywordset)
+# print(treated_keywordset)
+# print(recongizelist)
+# print(recognize)
