@@ -27,20 +27,20 @@ def pre_treat_keyword(keywords):
     return treated_keyword
 
 #recognition
-def recognition(sentences, keywords):
+def recognition(sentences, keywords, id):
     morphemes = kkma.pos(sentences)
-    print(morphemes)
-    morphemeslist = list()
-    recognizelist = list()
+    recognizedict = dict()
     recognize = False
     for set in morphemes:
         morpheme = set[0]
         if morpheme in keywords:
-            recognizelist.append(str(set[0]))
+            try:
+                recognizedict[morpheme][0] = recognizedict[morpheme] + 1
+                recognizedict[morpheme][1].append(id)
+            except:
+                recognizedict[morpheme] = [1,[id]]
             recognize = True
-        morphemeslist.append(set[0])
-
-    return recognizelist, recognize
+    return recognizedict, recognize
 
 # #example
 # example = "너무 자살하고 싶다, 죽고싶어 진짜. 너무 힘들어"

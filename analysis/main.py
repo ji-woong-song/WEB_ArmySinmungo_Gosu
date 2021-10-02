@@ -11,7 +11,7 @@ import DBinfo
 import clovainfo
 import connectDB
 import findsentiment
-import keyword
+import Keyword
 import morphemeanalysis
 import SQL
 
@@ -19,15 +19,14 @@ import SQL
 unit = 1234
 branch_unit1 = '1'
 branch_unit2 = '2'
-
+board = 'free'
 #main
 
 #DB open
 conn, cursor = connectDB.connect_RDB(DBinfo.rds_host,DBinfo.rds_port,DBinfo.rds_username,DBinfo.rds_password,DBinfo.rds_dbname)
 
-
-# #load content_board
-# content_data = SQL.post_selection('free',cursor,unit,branch_unit1,branch_unit2)
+#load content_board
+content_data = SQL.post_selection(board,cursor,unit,branch_unit1,branch_unit2)
 
 #analysis_1 : posnegneu
 # pos_num = 0
@@ -88,5 +87,25 @@ conn, cursor = connectDB.connect_RDB(DBinfo.rds_host,DBinfo.rds_port,DBinfo.rds_
 # SQL.analysis_morphemerank_insertion(conn,cursor,unit,branch_unit1,branch_unit2,rankdict)
     
 
-# #load keywords have to founded
-# keywordfindlist = SQL.keyword_selection(cursor, unit, branch_unit1,branch_unit2)
+#load keywords have to founded
+keywordfindlist = SQL.keyword_selection(cursor, unit, branch_unit1,branch_unit2)
+
+#analysis_3 : keyword detection
+treatkeywordfindlist = Keyword.pre_treat_keyword(keywordfindlist)
+keyworddetectiondict = dict()
+for data in content_data:
+    title = data['title']
+    content = data['content']
+    id = data['board_'+board+'_post_id']
+    detectdict, detect = Keyword.recognition(content, treatkeywordfindlist, id)
+    if detect == False:
+        continue
+    for morpheme in detectdict:
+        try:
+            keyworddetectiondict[morpheme][0] = keyworddetectiondict[morpheme][0] + detectdict[morpheme][0]
+            keyworddetectiondict[morpheme][1].append(detectdict[morpheme][1])
+        except:
+            keyworddetectiondict[morpheme] = detectdict[morpheme]
+
+#insertion_3 : keyword detection
+        
