@@ -2,9 +2,7 @@ package com.gosu.armysinmungo.armysinmungo.domain;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,17 +21,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "BOARD_FREE_POST")
+@Table(name = "BOARD_FREE_COMMENT")
 @Builder @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class BoardFreePost {
-
+public class BoardFreeComment {
+    
     @Id @GeneratedValue
     private Long id;
 
-    @NotNull
-    private int postNum;
+    private Long mension;
 
     @NotNull
     @CreatedDate
@@ -43,28 +40,20 @@ public class BoardFreePost {
     private LocalDateTime changedTime;
 
     @NotNull
-    private String category;
-
-    @NotNull
-    private String title;
-
-    @NotNull
-    @Column(length = 1000)
     private String content;
-
-    @NotNull
-    @Column(length = 500)
-    private String tagged;
 
     @ColumnDefault("0")
     private int agreeNum;
 
     @ColumnDefault("0")
-    private int disagreeNum;
+    private int disagreeNum = 0;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "USER_INFO_ID")
     private UserInfo userInfo;
+
+    @ManyToOne
+    @JoinColumn(name = "BOARD_FREE_POST_ID")
+    private BoardFreePost boardFreePost;
 }
 
