@@ -29,16 +29,11 @@ import json
 import pymysql
 import csv
 
-#input dbinfo using DBinfo.py
-import DBinfo
-
-#RDS info (AWS RDS)
-rds_host, rds_port, rds_dbname, rds_username, rds_password = DBinfo.info_in()
-
 #connecting rds
-def connect_RDB(host, port, username, password, dbname):
+def connect_RDB(line):
+    host, port, dbname, username, password = line[0], line[1], line[2], line[3], line[4]
     try:
-        connection = pymysql.connect(host=host,user=username,passwd=password,db=dbname,port=port,use_unicode=True,charset='utf8')
+        connection = pymysql.connect(host=host,port=port,db=dbname,user=username,passwd=password,use_unicode=True,charset='utf8')
         cursor = connection.cursor(pymysql.cursors.DictCursor)
     except:
         print("Error")

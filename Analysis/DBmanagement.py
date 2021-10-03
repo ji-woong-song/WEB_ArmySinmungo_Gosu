@@ -12,7 +12,7 @@ import DBinfo
 import pymysql
 
 #connect
-conn, cursor = connectDB.connect_RDB(DBinfo.rds_host, DBinfo.rds_port,DBinfo.rds_username,DBinfo.rds_password,DBinfo.rds_dbname)
+conn, cursor = connectDB.connect_RDB(DBinfo.info_in())
 
 sqllinecta1 = """CREATE TABLE analysis_attention_keywords (
             analysis_attention_keywords_id bigint NOT NULL,
@@ -79,6 +79,16 @@ sqllineka = """CREATE TABLE analysis_keyword_all (
             num_8 smallint unsigned default 0,
             num_9 smallint unsigned default 0,
             num_10 smallint unsigned default 0,
+            link_id_1 mediumtext,
+            link_id_2 mediumtext,
+            link_id_3 mediumtext,
+            link_id_4 mediumtext,
+            link_id_5 mediumtext,
+            link_id_6 mediumtext,
+            link_id_7 mediumtext,
+            link_id_8 mediumtext,
+            link_id_9 mediumtext,
+            link_id_10 mediumtext,
             PRIMARY KEY(analysis_keyword_all_id)
             ) ENGINE = InnoDB CHARSET=utf8;"""
 
@@ -126,5 +136,5 @@ sqlinsert_anal_keyset = '''insert into analysis_attention_keywords (analysis_att
 
 sqlinsert_unit_info = '''insert into unit_info (id, unit_belong, unit_code, unit_name) values (%s, %s, %s, %s)'''
 
-cursor.execute('select * from analysis_posnegneu')
+cursor.execute('select * from analysis_keyword_all')
 SELECT_print_well(cursor.fetchall())

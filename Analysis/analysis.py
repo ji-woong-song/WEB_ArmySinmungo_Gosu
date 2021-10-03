@@ -22,8 +22,11 @@ def analysis_posnegneu(content_data):
     neg_num = 0
     neu_num = 0
     for data in content_data:
-        title = data['title']
-        content = data['content']
+        try:
+            title = data['title']
+            content = data['content']
+        except:
+            content = data['content']
         contentlist = list()
         for i in range(len(content)//1000):
             contentlist.append(content[i*1000:(i+1)*1000])
@@ -52,8 +55,11 @@ def rank_keywords(keytags, content_data):
     morphemescount = dict()
     rankdict = dict()
     for data in content_data:
-        title = data['title']
-        content = data['content']
+        try:
+            title = data['title']
+            content = data['content']
+        except:
+            content = data['content']
         datamorphemes, datamorphemescount = morphemeanalysis.pcs_morphemes(title+' '+content,keytags)
         for i in datamorphemescount:
             if i in morphemescount.keys():
@@ -99,9 +105,12 @@ def detect_keyword(content_data, keywordfindlist, board):
     treatkeywordfindlist = Keyword.pre_treat_keyword(keywordfindlist)
     keyworddetectiondict = dict()
     for data in content_data:
-        title = data['title']
-        content = data['content']
-        id = data['board_'+board+'_post_id']
+        try:
+            title = data['title']
+            content = data['content']
+        except:
+            content = data['content']
+        id = data['board_'+board+'_id']
         detectdict, detect = Keyword.recognition(title+' '+content, treatkeywordfindlist, id)
         if detect == False:
             continue
@@ -115,4 +124,13 @@ def detect_keyword(content_data, keywordfindlist, board):
 
 
 #insertion_3 : keyword detection
-        
+def analysis_detect_insertion(conn, cursor, unit, branch_unit1, branch_unit2, keyworddetectiondict, board):
+    for key in keyworddetectiondict:
+        keynum = int(key.split('_')[1])
+        linkline = ''
+        for link in keyworddetectiondict[key][2][:-1]:
+            linkline = linkline + board + '_' + str(link) + '/'
+        linkline = linkline + board + '_' + str(keyworddetectiondict[key][2][-1])
+        cursor.execute(SQL.detect_insert_sqlline, (keynum, keyworddetectiondict[key][1], keynum, linkline, unit, branch_unit1, branch_unit2))
+        conn.commit()
+    return True

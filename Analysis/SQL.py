@@ -18,8 +18,8 @@ import connectDB
 board_type = ["free","communicate","debate"]
 
 #text load in post, return will be dict in list.
-def post_selection(post_name, cursor, unit, branch_unit1, branch_unit2):
-    sqlline = "SELECT board_"+post_name+"_post_id, title, content, user_info_id FROM board_"+post_name+"_post"
+def post_selection(post_name, cursor, user_info_id):
+    sqlline = "SELECT board_"+post_name+"_post_id, title, content, user_info_id FROM board_"+post_name+"_post WHERE user_info_id ="+user_info_id
     cursor.execute(sqlline)
     data = cursor.fetchall()
     return data
@@ -37,3 +37,9 @@ keywordrank_insert_sqlline = '''insert into analysis_keyword_all (unit_code, bra
                 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
 
 posnegneu_insert_sqlline = '''insert into analysis_posnegneu (unit_code, branch_unit1, branch_unit2, postive_percent, negative_percent, neutral_percent) values (%s,%s,%s,%s,%s,%s)'''
+
+detect_insert_sqlline = '''UPDATE analysis_attention_keywords 
+                    SET num_%s = %s, link_id_%s = %s 
+                    WHERE unit_code = %s AND branch_unit1 = %s AND branch_unit2 = %s'''
+
+load_users_id_sqlline = 'SELECT id FROM user_info WHERE unit_code = %s'
