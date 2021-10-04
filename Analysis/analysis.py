@@ -134,3 +134,14 @@ def analysis_detect_insertion(conn, cursor, unit, branch_unit1, branch_unit2, ke
         cursor.execute(SQL.detect_insert_sqlline, (keynum, keyworddetectiondict[key][1], keynum, linkline, unit, branch_unit1, branch_unit2))
         conn.commit()
     return True
+
+#text load in post or comment, return will be dict in list.
+def post_selection(post_name, cursor, user_info_id):
+    try:
+        print(SQL.post_selection_sqlline %(str(post_name), str(post_name), user_info_id))
+        cursor.execute(SQL.post_selection_sqlline %(str(post_name), str(post_name), user_info_id))
+        data = cursor.fetchall()
+    except:
+        cursor.execute(SQL.comment_selection_sqlline %(str(post_name), str(post_name), user_info_id))
+        data = cursor.fetchall()
+    return data

@@ -26,7 +26,7 @@ content_data = [{'board_free_post_id' : 11111, 'title' : '삶이란 어떤 것�
 #main
 
 #variables
-boardlist = ['free_post','free_comment', 'communicate_post','communicate_comment']
+boardlist = ['free_post']
 keywordnumlist = list()
 keyworddetectiondict = dict()
 numkeyworddict = dict()
@@ -44,11 +44,13 @@ keywordfindlist = keyword_selection(cursor, unit, branch_unit1, branch_unit2)
 
 #load users id in unit.
 cursor.execute(SQL.load_users_id_sqlline, unit)
-user_ids = cursor.fetchall().values()
+user_ids = list()
+for id in cursor.fetchall():
+    user_ids.append(id['id'])
 
 for id in user_ids:
     for board in boardlist:
-        content_data = SQL.post_selection(board,cursor,id)
+        content_data = post_selection(board,cursor,id)
         detectdict = detect_keyword(content_data, keywordfindlist, board)
         localrankdict = rank_keywords(keytags, content_data)
         lpos_num, lneg_num, lneu_num = analysis_posnegneu(content_data)
@@ -63,11 +65,12 @@ for id in user_ids:
         neu_num = neu_num + lneu_num
         keywordnumlist.append(localrankdict.values())
 
-for set in keywordnumlist:
-    try:
-        numkeyworddict[set[1]].append(set[0])
-    except:
-        numkeyworddict[set[1]] = [set[0]]
+for sets in keywordnumlist:
+    for set in sets:
+        try:
+            numkeyworddict[set[1]].append(set[0])
+        except:
+            numkeyworddict[set[1]] = [set[0]]
 
     count = 0
 for key in sorted(numkeyworddict.keys(),reverse=True):
