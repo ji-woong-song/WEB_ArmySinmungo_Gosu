@@ -62,4 +62,16 @@ public class BoardFreePostController {
                     .message("등록 완료")
                     .build(), HttpStatus.CREATED);
     }
+
+    @PutMapping("/board/free/post/{num}")
+    public ResponseEntity<BasicResponse> putBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest, @PathVariable("num") int num) {
+
+        boardFreePostService.update(num, boardFreePostRequest);
+        
+        return new ResponseEntity<>(
+            BasicResponse.builder()
+                    .status(HttpStatus.CREATED)
+                    .message("수정 완료")
+                    .build(), HttpStatus.CREATED);
+    }
 }

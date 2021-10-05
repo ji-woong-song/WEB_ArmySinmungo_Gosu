@@ -1,6 +1,7 @@
 package com.gosu.armysinmungo.armysinmungo.service;
 
 import com.gosu.armysinmungo.armysinmungo.repository.BoardFreePostRepository;
+import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardFreePostRequest;
 import com.gosu.armysinmungo.armysinmungo.domain.BoardFreePost;
 
 import org.springframework.stereotype.Service;
@@ -24,6 +25,16 @@ public class BoardFreePostService {
     public int save(BoardFreePost boardFreePost) {
         BoardFreePost savedBoardFreePost = boardFreePostRepository.save(boardFreePost);
         return savedBoardFreePost.getPostNum();
+    }
+
+    @Transactional
+    public int update(int num, BoardFreePostRequest boardFreePostRequest) {
+        BoardFreePost boardFreePost = boardFreePostRepository.findByPostNum(num).get();
+        boardFreePost.setTitle(boardFreePostRequest.getTitle());
+        boardFreePost.setCategory(boardFreePostRequest.getCategory());
+        boardFreePost.setContent(boardFreePostRequest.getContent());
+        boardFreePost.setTagged(boardFreePostRequest.getTagged());
+        return boardFreePost.getPostNum();
     }
 
     public BoardFreePost findByPostNum(int num) {
