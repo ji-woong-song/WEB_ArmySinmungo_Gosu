@@ -74,4 +74,16 @@ public class BoardFreePostController {
                     .message("수정 완료")
                     .build(), HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/board/free/post/{num}")
+    public ResponseEntity<BasicResponse> deleteBoardFreePost(@PathVariable("num") int num) {
+
+        boardFreePostService.delete(num);
+
+        return new ResponseEntity<>(
+            BasicResponse.builder()
+                    .status(HttpStatus.OK)
+                    .message("삭제 완료")
+                    .build(), HttpStatus.OK);
+    }
 }

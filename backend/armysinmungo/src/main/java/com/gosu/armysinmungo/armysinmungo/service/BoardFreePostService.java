@@ -37,6 +37,12 @@ public class BoardFreePostService {
         return boardFreePost.getPostNum();
     }
 
+    @Transactional
+    public void delete(int num) {
+        boardFreePostRepository.deleteByPostNum(num);
+        return ;
+    }
+
     public BoardFreePost findByPostNum(int num) {
         BoardFreePost boardFreePost = boardFreePostRepository.findByPostNum(num).get();
         return boardFreePost;
