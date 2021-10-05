@@ -36,7 +36,7 @@ def analysis_posnegneu(content_data):
             content_pos_num, content_neg_num, content_neu_num = findsentiment.analysis_sentiment(findsentiment.get_sentiment(content))
             pos_num = pos_num + content_pos_num
             neg_num = neg_num + content_neg_num
-            neu_num = neg_num + content_neg_num
+            neu_num = neg_num + content_neu_num
         pos_num = pos_num + title_pos_num
         neg_num = neg_num + title_neg_num
         neu_num = neu_num + title_neu_num
@@ -138,10 +138,10 @@ def analysis_detect_insertion(conn, cursor, unit, branch_unit1, branch_unit2, ke
 #text load in post or comment, return will be dict in list.
 def post_selection(post_name, cursor, user_info_id):
     try:
-        print(SQL.post_selection_sqlline %(str(post_name), str(post_name), user_info_id))
-        cursor.execute(SQL.post_selection_sqlline %(str(post_name), str(post_name), user_info_id))
+        cursor.execute(SQL.post_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
+        test = data[0]['title']
     except:
-        cursor.execute(SQL.comment_selection_sqlline %(str(post_name), str(post_name), user_info_id))
+        cursor.execute(SQL.comment_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
     return data

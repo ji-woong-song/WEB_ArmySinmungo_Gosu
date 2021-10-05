@@ -9,8 +9,6 @@ main.
 
 #import
 from analysis import *
-import DBinfo
-import connectDB
 
 
 #exmaple_variables
