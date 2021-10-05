@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,9 +13,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardPostResponse;
+
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -27,6 +31,7 @@ import lombok.NoArgsConstructor;
 @Builder @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)
 public class BoardFreePost {
 
     @Id @GeneratedValue
@@ -35,8 +40,8 @@ public class BoardFreePost {
     @NotNull
     private int postNum;
 
-    @NotNull
     @CreatedDate
+    @NotNull
     private LocalDateTime uploadTime;
 
     @LastModifiedDate
@@ -63,8 +68,24 @@ public class BoardFreePost {
     private int disagreeNum;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_INFO_ID")
     private UserInfo userInfo;
+
+    public BoardPostResponse toBoardPostResponse() {
+        return BoardPostResponse.builder()
+        .id(id)
+        .postNum(postNum)
+        .agreeNum(agreeNum)
+        .category(category)
+        .changedTime(changedTime)
+        .uploadTime(uploadTime)
+        .title(title)
+        .content(content)
+        .tagged(tagged)
+        .userName(userInfo.getUserName())
+        .build();
+    }
+
 }
 
