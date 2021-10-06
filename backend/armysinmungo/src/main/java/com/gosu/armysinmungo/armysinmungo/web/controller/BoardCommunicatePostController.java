@@ -2,11 +2,15 @@ package com.gosu.armysinmungo.armysinmungo.web.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.gosu.armysinmungo.armysinmungo.domain.BoardCommunicatePost;
 import com.gosu.armysinmungo.armysinmungo.domain.UserInfo;
 import com.gosu.armysinmungo.armysinmungo.service.BoardCommunicatePostService;
 import com.gosu.armysinmungo.armysinmungo.service.UserInfoService;
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardPostResponse;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +30,21 @@ public class BoardCommunicatePostController {
     public BoardCommunicatePostController(BoardCommunicatePostService boardCommunicatePostService, UserInfoService userInfoService) {
         this.boardCommunicatePostService = boardCommunicatePostService;
         this.UserInfoService = userInfoService;
+    }
+
+    @GetMapping("/board/communicate/post/all")
+    public ResponseEntity<BasicResponse> getBoardCommunicatePostAll() {
+
+        List<BoardCommunicatePost> boardCommunicatePostList = boardCommunicatePostService.findAll();
+        
+        List<BoardPostResponse> boardPostResponseList = boardCommunicatePostList.stream().map((boardCommunicatePost)-> boardCommunicatePost.toBoardPostResponse()).collect(Collectors.toList());
+    
+        return new ResponseEntity<>(
+            BasicResponse.builder()
+                    .status(HttpStatus.OK)
+                    .message("조회 완료")
+                    .data(boardPostResponseList)
+                    .build(), HttpStatus.OK); 
     }
 
     @GetMapping("/board/communicate/post/{num}")

@@ -4,6 +4,8 @@ import com.gosu.armysinmungo.armysinmungo.repository.BoardCommunicatePostReposit
 import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardCommunicatePostRequest; // dto 생성
 import com.gosu.armysinmungo.armysinmungo.domain.BoardCommunicatePost;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,11 @@ public class BoardCommunicatePostService {
     @Autowired
     public BoardCommunicatePostService(BoardCommunicatePostRepository boardCommunicatePostRepository) {
         this.boardCommunicatePostRepository = boardCommunicatePostRepository;
+    }
+
+    public List<BoardCommunicatePost> findAll() {
+        List<BoardCommunicatePost> boardCommunicatePostList = boardCommunicatePostRepository.findAll();
+        return boardCommunicatePostList;
     }
 
     @Transactional

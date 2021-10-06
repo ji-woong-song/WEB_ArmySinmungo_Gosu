@@ -1,11 +1,15 @@
 package com.gosu.armysinmungo.armysinmungo.web.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.gosu.armysinmungo.armysinmungo.domain.BoardFreePost;
 import com.gosu.armysinmungo.armysinmungo.domain.UserInfo;
 import com.gosu.armysinmungo.armysinmungo.service.BoardFreePostService;
 import com.gosu.armysinmungo.armysinmungo.service.UserInfoService;
 import com.gosu.armysinmungo.armysinmungo.web.dto.BasicResponse;
 import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardFreePostRequest;
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardPostResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +27,21 @@ public class BoardFreePostController {
     public BoardFreePostController(BoardFreePostService boardFreePostService, UserInfoService userInfoService) {
         this.boardFreePostService = boardFreePostService;
         this.UserInfoService = userInfoService;
+    }
+
+    @GetMapping("/board/free/post/all")
+    public ResponseEntity<BasicResponse> getBoardFreePostAll() {
+
+        List<BoardFreePost> boardFreePostList = boardFreePostService.findAll();
+        
+        List<BoardPostResponse> boardPostResponseList = boardFreePostList.stream().map((boardFreePost)-> boardFreePost.toBoardPostResponse()).collect(Collectors.toList());
+    
+        return new ResponseEntity<>(
+            BasicResponse.builder()
+                    .status(HttpStatus.OK)
+                    .message("조회 완료")
+                    .data(boardPostResponseList)
+                    .build(), HttpStatus.OK); 
     }
 
     @GetMapping("/board/free/post/{num}")

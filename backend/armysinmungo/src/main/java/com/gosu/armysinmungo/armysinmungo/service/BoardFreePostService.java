@@ -2,6 +2,9 @@ package com.gosu.armysinmungo.armysinmungo.service;
 
 import com.gosu.armysinmungo.armysinmungo.repository.BoardFreePostRepository;
 import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardFreePostRequest;
+
+import java.util.List;
+
 import com.gosu.armysinmungo.armysinmungo.domain.BoardFreePost;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +22,11 @@ public class BoardFreePostService {
     @Autowired
     public BoardFreePostService(BoardFreePostRepository boardFreePostRepository) {
         this.boardFreePostRepository = boardFreePostRepository;
+    }
+
+    public List<BoardFreePost> findAll() {
+        List<BoardFreePost> boardFreePostList = boardFreePostRepository.findAll();
+        return boardFreePostList;
     }
 
     @Transactional

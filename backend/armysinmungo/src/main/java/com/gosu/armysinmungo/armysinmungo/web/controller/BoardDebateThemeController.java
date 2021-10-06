@@ -2,11 +2,14 @@ package com.gosu.armysinmungo.armysinmungo.web.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.gosu.armysinmungo.armysinmungo.domain.BoardDebateTheme;
 import com.gosu.armysinmungo.armysinmungo.domain.UserInfo;
 import com.gosu.armysinmungo.armysinmungo.service.BoardDebateThemeService;
 import com.gosu.armysinmungo.armysinmungo.service.UserInfoService;
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardPostResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +30,21 @@ public class BoardDebateThemeController {
     public BoardDebateThemeController(BoardDebateThemeService boardDebateThemeService, UserInfoService userInfoService) {
         this.boardDebateThemeService = boardDebateThemeService;
         this.UserInfoService = userInfoService;
+    }
+
+    @GetMapping("/board/debate/theme/all")
+    public ResponseEntity<BasicResponse> getBoardDebateThemeAll() {
+
+        List<BoardDebateTheme> boardDebateThemeList = boardDebateThemeService.findAll();
+        
+        List<BoardPostResponse> boardPostResponseList = boardDebateThemeList.stream().map((boardDebateTheme)-> boardDebateTheme.toBoardPostResponse()).collect(Collectors.toList());
+    
+        return new ResponseEntity<>(
+            BasicResponse.builder()
+                    .status(HttpStatus.OK)
+                    .message("조회 완료")
+                    .data(boardPostResponseList)
+                    .build(), HttpStatus.OK);
     }
 
     @GetMapping("/board/debate/theme/{num}")
