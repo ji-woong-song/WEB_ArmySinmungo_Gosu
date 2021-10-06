@@ -1,7 +1,6 @@
 package com.gosu.armysinmungo.armysinmungo.web.controller;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import com.gosu.armysinmungo.armysinmungo.domain.BoardFreePost;

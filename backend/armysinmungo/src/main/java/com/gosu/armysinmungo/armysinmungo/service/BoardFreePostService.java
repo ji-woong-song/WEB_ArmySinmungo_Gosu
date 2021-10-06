@@ -3,7 +3,6 @@ package com.gosu.armysinmungo.armysinmungo.service;
 import com.gosu.armysinmungo.armysinmungo.repository.BoardFreePostRepository;
 import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardFreePostRequest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.gosu.armysinmungo.armysinmungo.domain.BoardFreePost;
