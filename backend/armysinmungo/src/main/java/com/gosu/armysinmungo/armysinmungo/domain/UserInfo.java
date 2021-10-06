@@ -43,6 +43,9 @@ public class UserInfo {
     private String userPw;
 
     @NotNull
+    private String userName;
+
+    @NotNull
     private LocalDate enlistDate;
 
     private LocalDate dischargeDate;
