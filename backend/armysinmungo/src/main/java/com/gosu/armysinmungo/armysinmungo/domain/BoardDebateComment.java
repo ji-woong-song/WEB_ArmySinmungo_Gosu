@@ -50,7 +50,7 @@ public class BoardDebateComment {
     private int agreeNum;
 
     @ColumnDefault("0")
-    private int disagreeNum = 0;
+    private int disagreeNum;
 
     @NotNull
     @Enumerated(EnumType.STRING)

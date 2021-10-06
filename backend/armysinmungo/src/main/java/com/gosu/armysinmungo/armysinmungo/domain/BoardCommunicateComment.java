@@ -46,7 +46,7 @@ public class BoardCommunicateComment {
     private int agreeNum;
 
     @ColumnDefault("0")
-    private int disagreeNum = 0;
+    private int disagreeNum;
 
     @ManyToOne
     @JoinColumn(name = "USER_INFO_ID")
