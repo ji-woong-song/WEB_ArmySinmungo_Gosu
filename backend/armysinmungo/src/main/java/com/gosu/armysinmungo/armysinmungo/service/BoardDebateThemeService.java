@@ -4,6 +4,8 @@ import com.gosu.armysinmungo.armysinmungo.repository.BoardDebateThemeRepository;
 import com.gosu.armysinmungo.armysinmungo.web.dto.request.BoardDebateThemeRequest;
 import com.gosu.armysinmungo.armysinmungo.domain.BoardDebateTheme;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,10 @@ public class BoardDebateThemeService {
         this.boardDebateThemeRepository = boardDebateThemeRepository;
     }
 
+    public List<BoardDebateTheme> findAll() {
+        List<BoardDebateTheme> boardDebateThemeList = boardDebateThemeRepository.findAll();
+        return boardDebateThemeList;
+    }
 
     @Transactional
     public int save(BoardDebateTheme boardDebateTheme) {
