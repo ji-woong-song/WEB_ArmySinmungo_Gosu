@@ -76,6 +76,7 @@ public class BoardCommunicateComment {
             .mensionList(new ArrayList<>())
             .id(id)
             .disagreeNum(disagreeNum)
+            .agreeDisagree("")
             .build();
     }
 

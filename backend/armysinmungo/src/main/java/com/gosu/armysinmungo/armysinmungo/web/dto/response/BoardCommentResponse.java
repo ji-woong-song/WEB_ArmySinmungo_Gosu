@@ -24,4 +24,5 @@ public class BoardCommentResponse {
     private List<BoardCommentResponse> mensionList;
     private Long mension;
     private int postNum;
+    private String agreeDisagree;
 }
