@@ -61,7 +61,7 @@ public class BoardFreePostController {
     public ResponseEntity<BasicResponse> postBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest) {
         
         int currentCount = boardFreePostService.count();        
-        UserInfo userInfo = UserInfoService.findById(54321L);
+        UserInfo userInfo = UserInfoService.findById(54321L); // 하드코딩 -> 실사용자로 변경
 
         BoardFreePost boardFreePost = 
             BoardFreePost.builder()

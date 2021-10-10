@@ -18,17 +18,25 @@ import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardCommentResponse;
+
+import java.util.ArrayList;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import javax.persistence.EntityListeners;
+
 @Entity
 @Table(name = "BOARD_DEBATE_COMMENT")
 @Builder @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)
 public class BoardDebateComment {
     
     @Id @GeneratedValue
@@ -61,7 +69,22 @@ public class BoardDebateComment {
     private UserInfo userInfo;
 
     @ManyToOne
-    @JoinColumn(name = "BOARD_FREE_POST_ID")
-    private BoardFreePost boardFreePost;
-}
+    @JoinColumn(name = "BOARD_DEBATE_THEME_ID")
+    private BoardDebateTheme boardDebateTheme;
 
+    public BoardCommentResponse toBoardCommentResponse() {
+        return BoardCommentResponse.builder()
+            .postNum(boardDebateTheme.getPostNum())
+            .uploadTime(uploadTime)
+            .changedTime(changedTime)
+            .userName(userInfo.getUserName())
+            .content(content)
+            .agreeNum(agreeNum)
+            .mension(mension)
+            .mensionList(new ArrayList<>())
+            .id(id)
+            .disagreeNum(disagreeNum)
+            .agreeDisagree(agreeDisagree.name())
+            .build();
+    }
+}

@@ -12,7 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class ArmysinmungoApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(ArmysinmungoApplication.class, args);
 	}
-
+	
 }
