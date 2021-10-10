@@ -22,6 +22,7 @@ public class BoardFreeCommentService {
         this.boardFreeCommentRepository = boardFreeCommentRepository;
     }
 
+    @Transactional
     public Long save(BoardFreeComment boardFreeComment) {
         BoardFreeComment savedBoardFreeComment = boardFreeCommentRepository.save(boardFreeComment);
         return savedBoardFreeComment.getId();
