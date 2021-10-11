@@ -6,6 +6,8 @@ import com.gosu.armysinmungo.armysinmungo.domain.BoardDebateTheme;
 
 import java.util.List;
 
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,29 +31,29 @@ public class BoardDebateThemeService {
     }
 
     @Transactional
-    public int save(BoardDebateTheme boardDebateTheme) {
+    public Long save(BoardDebateTheme boardDebateTheme) {
         BoardDebateTheme savedBoardDebateTheme = boardDebateThemeRepository.save(boardDebateTheme);
-        return savedBoardDebateTheme.getPostNum();
+        return savedBoardDebateTheme.getId();
     }
 
     @Transactional
-    public int update(int num, BoardDebateThemeRequest boardDebateThemeRequest) {
-        BoardDebateTheme boardDebateTheme = boardDebateThemeRepository.findByPostNum(num).get();
+    public Long update(Long id, BoardDebateThemeRequest boardDebateThemeRequest) {
+        BoardDebateTheme boardDebateTheme = boardDebateThemeRepository.findById(id).get();
         boardDebateTheme.setTitle(boardDebateThemeRequest.getTitle());
         boardDebateTheme.setCategory(boardDebateThemeRequest.getCategory());
         boardDebateTheme.setContent(boardDebateThemeRequest.getContent());
         boardDebateTheme.setTagged(boardDebateThemeRequest.getTagged());
-        return boardDebateTheme.getPostNum();
+        return boardDebateTheme.getId();
     }
 
     @Transactional
-    public void delete(int num) {
-        boardDebateThemeRepository.deleteByPostNum(num);
+    public void delete(Long id) {
+        boardDebateThemeRepository.deleteById(id);
         return ;
     }
 
-    public BoardDebateTheme findByPostNum(int num) {
-        BoardDebateTheme boardDebateTheme = boardDebateThemeRepository.findByPostNum(num).get();
+    public BoardDebateTheme findById(Long id) {
+        BoardDebateTheme boardDebateTheme = boardDebateThemeRepository.findById(id).get();
         return boardDebateTheme;
     }
 

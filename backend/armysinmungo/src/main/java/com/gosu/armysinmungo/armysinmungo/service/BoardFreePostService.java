@@ -30,29 +30,29 @@ public class BoardFreePostService {
     }
 
     @Transactional
-    public int save(BoardFreePost boardFreePost) {
+    public Long save(BoardFreePost boardFreePost) {
         BoardFreePost savedBoardFreePost = boardFreePostRepository.save(boardFreePost);
-        return savedBoardFreePost.getPostNum();
+        return savedBoardFreePost.getId();
     }
 
     @Transactional
-    public int update(int num, BoardFreePostRequest boardFreePostRequest) {
-        BoardFreePost boardFreePost = boardFreePostRepository.findByPostNum(num).get();
+    public Long update(Long id, BoardFreePostRequest boardFreePostRequest) {
+        BoardFreePost boardFreePost = boardFreePostRepository.findById(id).get();
         boardFreePost.setTitle(boardFreePostRequest.getTitle());
         boardFreePost.setCategory(boardFreePostRequest.getCategory());
         boardFreePost.setContent(boardFreePostRequest.getContent());
         boardFreePost.setTagged(boardFreePostRequest.getTagged());
-        return boardFreePost.getPostNum();
+        return boardFreePost.getId();
     }
 
     @Transactional
-    public void delete(int num) {
-        boardFreePostRepository.deleteByPostNum(num);
+    public void delete(Long id) {
+        boardFreePostRepository.deleteById(id);
         return ;
     }
 
-    public BoardFreePost findByPostNum(int num) {
-        BoardFreePost boardFreePost = boardFreePostRepository.findByPostNum(num).get();
+    public BoardFreePost findById(Long id) {
+        BoardFreePost boardFreePost = boardFreePostRepository.findById(id).get();
         return boardFreePost;
     }
 

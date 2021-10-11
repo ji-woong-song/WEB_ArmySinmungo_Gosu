@@ -7,5 +7,5 @@ import lombok.Setter;
 public class BoardFreeCommentRequest {
     private Long mension = 0L;
     private String content;
-    private int postNum;
+    private Long id;
 }

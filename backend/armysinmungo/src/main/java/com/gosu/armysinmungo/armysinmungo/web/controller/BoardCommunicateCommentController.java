@@ -36,7 +36,7 @@ public class BoardCommunicateCommentController {
     public ResponseEntity<BasicResponse> postBoardCommunicateComment(@RequestBody BoardCommunicateCommentRequest boardCommunicateCommentRequest) {
 
         UserInfo userInfo = userInfoService.findById(54321L);
-        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findByPostNum(boardCommunicateCommentRequest.getPostNum());
+        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findById(boardCommunicateCommentRequest.getId());
 
         BoardCommunicateComment boardCommunicateComment =
             BoardCommunicateComment.builder()
@@ -55,10 +55,10 @@ public class BoardCommunicateCommentController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @GetMapping("/board/communicate/comment/{num}")
-    public ResponseEntity<BasicResponse> getBoardCommunicateComment(@PathVariable("num") int postNum) {
+    @GetMapping("/board/communicate/comment/{id}")
+    public ResponseEntity<BasicResponse> getBoardCommunicateComment(@PathVariable("id") Long id) {
         
-        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findByPostNum(postNum);
+        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findById(id);
         List<BoardCommunicateComment> boardCommunicateCommentList = boardCommunicateCommentService.findByBoardCommunicatePost_Id(boardCommunicatePost.getId());
 
         List<BoardCommentResponse> boardCommentResponseList = boardCommunicateCommentService.toBoardCommentResponseList(boardCommunicateCommentList);

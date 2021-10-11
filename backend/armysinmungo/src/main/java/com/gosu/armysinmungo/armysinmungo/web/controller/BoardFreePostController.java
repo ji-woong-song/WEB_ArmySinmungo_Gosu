@@ -44,10 +44,10 @@ public class BoardFreePostController {
                     .build(), HttpStatus.OK); 
     }
 
-    @GetMapping("/board/free/post/{num}")
-    public ResponseEntity<BasicResponse> getBoardFreePost(@PathVariable("num") int num) {
+    @GetMapping("/board/free/post/{id}")
+    public ResponseEntity<BasicResponse> getBoardFreePost(@PathVariable("id") Long id) {
 
-        BoardFreePost boardFreePost = boardFreePostService.findByPostNum(num);
+        BoardFreePost boardFreePost = boardFreePostService.findById(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -59,13 +59,11 @@ public class BoardFreePostController {
 
     @PostMapping("/board/free/post")
     public ResponseEntity<BasicResponse> postBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest) {
-        
-        int currentCount = boardFreePostService.count();        
+              
         UserInfo userInfo = UserInfoService.findById(54321L); // 하드코딩 -> 실사용자로 변경
 
         BoardFreePost boardFreePost = 
             BoardFreePost.builder()
-            .postNum(currentCount+1)
             .title(boardFreePostRequest.getTitle())
             .content(boardFreePostRequest.getContent())
             .category(boardFreePostRequest.getCategory())
@@ -82,10 +80,10 @@ public class BoardFreePostController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @PutMapping("/board/free/post/{num}")
-    public ResponseEntity<BasicResponse> putBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest, @PathVariable("num") int num) {
+    @PutMapping("/board/free/post/{id}")
+    public ResponseEntity<BasicResponse> putBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest, @PathVariable("id") Long id) {
 
-        boardFreePostService.update(num, boardFreePostRequest);
+        boardFreePostService.update(id, boardFreePostRequest);
         
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -94,10 +92,10 @@ public class BoardFreePostController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/board/free/post/{num}")
-    public ResponseEntity<BasicResponse> deleteBoardFreePost(@PathVariable("num") int num) {
+    @DeleteMapping("/board/free/post/{id}")
+    public ResponseEntity<BasicResponse> deleteBoardFreePost(@PathVariable("id") Long id) {
 
-        boardFreePostService.delete(num);
+        boardFreePostService.delete(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()

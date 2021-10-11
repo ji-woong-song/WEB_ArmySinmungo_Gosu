@@ -7,5 +7,5 @@ import lombok.Getter;
 public class BoardCommunicateCommentRequest {
     private Long mension = 0L;
     private String content;
-    private int postNum;
+    private Long id;
 }

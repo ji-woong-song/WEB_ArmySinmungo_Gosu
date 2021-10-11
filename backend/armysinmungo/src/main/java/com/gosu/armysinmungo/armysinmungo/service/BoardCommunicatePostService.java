@@ -29,29 +29,29 @@ public class BoardCommunicatePostService {
     }
 
     @Transactional
-    public int save(BoardCommunicatePost boardCommunicatePost) {
+    public Long save(BoardCommunicatePost boardCommunicatePost) {
         BoardCommunicatePost savedBoardCommunicatePost = boardCommunicatePostRepository.save(boardCommunicatePost);
-        return savedBoardCommunicatePost.getPostNum();
+        return savedBoardCommunicatePost.getId();
     }
 
     @Transactional
-    public int update(int num, BoardCommunicatePostRequest boardCommunicatePostRequest) {
-        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostRepository.findByPostNum(num).get();
+    public Long update(Long id, BoardCommunicatePostRequest boardCommunicatePostRequest) {
+        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostRepository.findById(id).get();
         boardCommunicatePost.setTitle(boardCommunicatePostRequest.getTitle());
         boardCommunicatePost.setCategory(boardCommunicatePostRequest.getCategory());
         boardCommunicatePost.setContent(boardCommunicatePostRequest.getContent());
         boardCommunicatePost.setTagged(boardCommunicatePostRequest.getTagged());
-        return boardCommunicatePost.getPostNum();
+        return boardCommunicatePost.getId();
     }
 
     @Transactional
-    public void delete(int num) {
-        boardCommunicatePostRepository.deleteByPostNum(num);
+    public void delete(Long id) {
+        boardCommunicatePostRepository.deleteById(id);
         return ;
     }
 
-    public BoardCommunicatePost findByPostNum(int num) {
-        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostRepository.findByPostNum(num).get();
+    public BoardCommunicatePost findById(Long id) {
+        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostRepository.findById(id).get();
         return boardCommunicatePost;
     }
 
