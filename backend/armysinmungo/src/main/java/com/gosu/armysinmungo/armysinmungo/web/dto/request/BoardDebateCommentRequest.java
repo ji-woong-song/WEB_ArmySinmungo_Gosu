@@ -8,6 +8,6 @@ import lombok.Getter;
 public class BoardDebateCommentRequest {
     private Long mension = 0L;
     private String content;
-    private int postNum;
+    private Long id;
     private String agreeDisagree;
 }

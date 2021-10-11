@@ -47,10 +47,10 @@ public class BoardDebateThemeController {
                     .build(), HttpStatus.OK);
     }
 
-    @GetMapping("/board/debate/theme/{num}")
-    public ResponseEntity<BasicResponse> getBoardDebateTheme(@PathVariable("num") int num) {
+    @GetMapping("/board/debate/theme/{id}")
+    public ResponseEntity<BasicResponse> getBoardDebateTheme(@PathVariable("id") Long id) {
 
-        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findByPostNum(num);
+        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findById(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -62,13 +62,11 @@ public class BoardDebateThemeController {
 
     @PostMapping("/board/debate/theme")
     public ResponseEntity<BasicResponse> postBoardDebateTheme(@RequestBody BoardDebateThemeRequest boardDebateThemeRequest) {
-        
-        int currentCount = boardDebateThemeService.count();        
+                
         UserInfo userInfo = UserInfoService.findById(54321L);
 
         BoardDebateTheme boardDebateTheme = 
             BoardDebateTheme.builder()
-            .postNum(currentCount+1)
             .title(boardDebateThemeRequest.getTitle())
             .content(boardDebateThemeRequest.getContent())
             .category(boardDebateThemeRequest.getCategory())
@@ -85,10 +83,10 @@ public class BoardDebateThemeController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @PutMapping("/board/debate/theme/{num}")
-    public ResponseEntity<BasicResponse> putBoardDebateTheme(@RequestBody BoardDebateThemeRequest boardDebateThemeRequest, @PathVariable("num") int num) {
+    @PutMapping("/board/debate/theme/{id}")
+    public ResponseEntity<BasicResponse> putBoardDebateTheme(@RequestBody BoardDebateThemeRequest boardDebateThemeRequest, @PathVariable("id") Long id) {
 
-        boardDebateThemeService.update(num, boardDebateThemeRequest);
+        boardDebateThemeService.update(id, boardDebateThemeRequest);
         
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -97,10 +95,10 @@ public class BoardDebateThemeController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/board/debate/theme/{num}")
-    public ResponseEntity<BasicResponse> deleteBoardDebateTheme(@PathVariable("num") int num) {
+    @DeleteMapping("/board/debate/theme/{id}")
+    public ResponseEntity<BasicResponse> deleteBoardDebateTheme(@PathVariable("id") Long id) {
 
-        boardDebateThemeService.delete(num);
+        boardDebateThemeService.delete(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()

@@ -39,7 +39,7 @@ public class BoardFreeCommentController {
     public ResponseEntity<BasicResponse> postBoardFreeComment(@RequestBody BoardFreeCommentRequest boardFreeCommentRequest) {
 
         UserInfo userInfo = userInfoService.findById(54321L);
-        BoardFreePost boardFreePost = boardFreePostService.findByPostNum(boardFreeCommentRequest.getPostNum());
+        BoardFreePost boardFreePost = boardFreePostService.findById(boardFreeCommentRequest.getId());
 
         BoardFreeComment boardFreeComment =
             BoardFreeComment.builder()
@@ -58,10 +58,10 @@ public class BoardFreeCommentController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @GetMapping("/board/free/comment/{num}")
-    public ResponseEntity<BasicResponse> getBoardFreeComment(@PathVariable("num") int postNum) {
+    @GetMapping("/board/free/comment/{id}")
+    public ResponseEntity<BasicResponse> getBoardFreeComment(@PathVariable("id") Long id) {
         
-        BoardFreePost boardFreePost = boardFreePostService.findByPostNum(postNum);
+        BoardFreePost boardFreePost = boardFreePostService.findById(id);
         List<BoardFreeComment> boardFreeCommentList = boardFreeCommentService.findByBoardFreePost_Id(boardFreePost.getId());
 
         List<BoardCommentResponse> boardCommentResponseList = boardFreeCommentService.toBoardCommentResponseList(boardFreeCommentList);

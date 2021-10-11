@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.Id;
+
 import com.gosu.armysinmungo.armysinmungo.domain.BoardCommunicatePost;
 import com.gosu.armysinmungo.armysinmungo.domain.UserInfo;
 import com.gosu.armysinmungo.armysinmungo.service.BoardCommunicatePostService;
@@ -47,10 +49,10 @@ public class BoardCommunicatePostController {
                     .build(), HttpStatus.OK); 
     }
 
-    @GetMapping("/board/communicate/post/{num}")
-    public ResponseEntity<BasicResponse> getBoardCommunicatePost(@PathVariable("num") int num) {
+    @GetMapping("/board/communicate/post/{id}")
+    public ResponseEntity<BasicResponse> getBoardCommunicatePost(@PathVariable("id") Long id) {
 
-        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findByPostNum(num);
+        BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findById(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -62,13 +64,11 @@ public class BoardCommunicatePostController {
 
     @PostMapping("/board/communicate/post")
     public ResponseEntity<BasicResponse> postBoardCommunicatePost(@RequestBody BoardCommunicatePostRequest boardCommunicatePostRequest) {
-        
-        int currentCount = boardCommunicatePostService.count();        
+         
         UserInfo userInfo = UserInfoService.findById(54321L);
 
         BoardCommunicatePost boardCommunicatePost = 
             BoardCommunicatePost.builder()
-            .postNum(currentCount+1)
             .title(boardCommunicatePostRequest.getTitle())
             .content(boardCommunicatePostRequest.getContent())
             .category(boardCommunicatePostRequest.getCategory())
@@ -85,10 +85,10 @@ public class BoardCommunicatePostController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @PutMapping("/board/communicate/post/{num}")
-    public ResponseEntity<BasicResponse> putBoardCommunicatePost(@RequestBody BoardCommunicatePostRequest boardCommunicatePostRequest, @PathVariable("num") int num) {
+    @PutMapping("/board/communicate/post/{id}")
+    public ResponseEntity<BasicResponse> putBoardCommunicatePost(@RequestBody BoardCommunicatePostRequest boardCommunicatePostRequest, @PathVariable("id") Long id) {
 
-        boardCommunicatePostService.update(num, boardCommunicatePostRequest);
+        boardCommunicatePostService.update(id, boardCommunicatePostRequest);
         
         return new ResponseEntity<>(
             BasicResponse.builder()
@@ -97,10 +97,10 @@ public class BoardCommunicatePostController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/board/communicate/post/{num}")
-    public ResponseEntity<BasicResponse> deleteBoardCommunicatePost(@PathVariable("num") int num) {
+    @DeleteMapping("/board/communicate/post/{id}")
+    public ResponseEntity<BasicResponse> deleteBoardCommunicatePost(@PathVariable("id") Long id) {
 
-        boardCommunicatePostService.delete(num);
+        boardCommunicatePostService.delete(id);
 
         return new ResponseEntity<>(
             BasicResponse.builder()

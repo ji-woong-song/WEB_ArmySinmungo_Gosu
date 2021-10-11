@@ -40,7 +40,7 @@ public class BoardDebateCommentController {
     public ResponseEntity<BasicResponse> postBoardDebateComment(@RequestBody BoardDebateCommentRequest boardDebateCommentRequest) {
 
         UserInfo userInfo = userInfoService.findById(54321L);
-        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findByPostNum(boardDebateCommentRequest.getPostNum());
+        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findById(boardDebateCommentRequest.getId());
 
         BoardDebateComment boardDebateComment =
             BoardDebateComment.builder()
@@ -60,10 +60,10 @@ public class BoardDebateCommentController {
                     .build(), HttpStatus.CREATED);
     }
 
-    @GetMapping("/board/debate/comment/{num}")
-    public ResponseEntity<BasicResponse> getBoardDebateComment(@PathVariable("num") int postNum) {
+    @GetMapping("/board/debate/comment/{id}")
+    public ResponseEntity<BasicResponse> getBoardDebateComment(@PathVariable("id") Long id) {
         
-        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findByPostNum(postNum);
+        BoardDebateTheme boardDebateTheme = boardDebateThemeService.findById(id);
         List<BoardDebateComment> boardDebateCommentList = boardDebateCommentService.findByBoardDebateTheme_Id(boardDebateTheme.getId());
 
         List<BoardCommentResponse> boardCommentResponseList = boardDebateCommentService.toBoardCommentResponseList(boardDebateCommentList);
