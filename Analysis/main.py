@@ -16,8 +16,8 @@ unit = 1234
 branch_unit1 = '1'
 branch_unit2 = '2'
 
-content_data = [{'board_free_post_id' : 11111, 'title' : '삶이란 어떤 것일까.', 'content' : '나는 오늘 하루를 살아간다. 근데 왜 살아가는 것일가. 자살하는 것과 크게 다른 차이가 있는것일까?'},
-                {'board_free_post_id' : 11122, 'title' : '죽을까 그냥', 'content' : '군생활이 끝이 안보인다. 걍 자살하는게 맞는걸까'}]
+content_data = [{'id' : 11111, 'title' : '삶이란 어떤 것일까.', 'content' : '나는 오늘 하루를 살아간다. 근데 왜 살아가는 것일가. 자살하는 것과 크게 다른 차이가 있는것일까?'},
+                {'id' : 11122, 'title' : '죽을까 그냥', 'content' : '군생활이 끝이 안보인다. 걍 자살하는게 맞는걸까'}]
 
 
 

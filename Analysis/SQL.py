@@ -14,9 +14,9 @@ import connectDB
 #user_info
 # id, birth, branch_unit1, branch_unit2, cellphone, discharge_date, enlist_date, mil_num, unit_code, user_pw, user_rank
 
-post_selection_sqlline = '''SELECT id, title, content, user_info_id FROM board_%s WHERE user_info_id =%s'''
+post_selection_sqlline = '''SELECT id, title, content FROM board_%s WHERE id =%s'''
 
-comment_selection_sqlline = '''SELECT id, content, user_info_id FROM board_%s WHERE user_info_id =%s'''
+comment_selection_sqlline = '''SELECT id, content FROM board_%s WHERE id =%s'''
 
 attention_keyword_select_sqlline = '''SELECT * FROM analysis_attention_keywords WHERE unit_code=%s AND branch_unit1=%s AND branch_unit2=%s'''
 
