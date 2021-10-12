@@ -46,7 +46,7 @@ public class BoardDebateCommentService {
 
         for(int i = 0; i<boardDebateCommentList.size(); i++) {
             BoardDebateComment boardDebateComment = boardDebateCommentList.get(i);
-            if(boardDebateComment.getMension() != null) mensionList.add(boardDebateComment.toBoardCommentResponse());
+            if(boardDebateComment.getMension() != 0) mensionList.add(boardDebateComment.toBoardCommentResponse());
             else boardCommentResponseList.add(boardDebateComment.toBoardCommentResponse());
         }
 

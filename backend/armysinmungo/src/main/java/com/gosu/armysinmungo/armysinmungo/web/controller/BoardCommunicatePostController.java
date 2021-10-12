@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.Id;
 
 import com.gosu.armysinmungo.armysinmungo.domain.BoardCommunicatePost;
 import com.gosu.armysinmungo.armysinmungo.domain.UserInfo;
