@@ -15,5 +15,5 @@ public class ArmysinmungoApplication {
 		System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(ArmysinmungoApplication.class, args);
 	}
-	
+	 
 }

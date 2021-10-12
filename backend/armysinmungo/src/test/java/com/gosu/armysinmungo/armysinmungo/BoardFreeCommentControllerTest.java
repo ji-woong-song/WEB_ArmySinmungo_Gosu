@@ -32,7 +32,7 @@ public class BoardFreeCommentControllerTest {
 
         BoardFreeCommentRequest boardFreeCommentRequest = new BoardFreeCommentRequest();
         boardFreeCommentRequest.setContent("댓글내용 ㅎㅎㅎㅎ");
-        boardFreeCommentRequest.setPostNum(4);
+        // boardFreeCommentRequest.setId(4);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/board/free/comment")
         .contentType(MediaType.APPLICATION_JSON)

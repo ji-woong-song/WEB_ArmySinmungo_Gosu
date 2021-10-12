@@ -6,8 +6,6 @@ import com.gosu.armysinmungo.armysinmungo.domain.BoardDebateTheme;
 
 import java.util.List;
 
-import javax.persistence.Id;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

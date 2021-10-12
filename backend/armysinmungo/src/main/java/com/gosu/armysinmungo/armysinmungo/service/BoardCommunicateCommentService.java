@@ -46,7 +46,7 @@ public class BoardCommunicateCommentService {
 
         for(int i = 0; i<boardCommunicateCommentList.size(); i++) {
             BoardCommunicateComment boardCommunicateComment = boardCommunicateCommentList.get(i);
-            if(boardCommunicateComment.getMension() != null) mensionList.add(boardCommunicateComment.toBoardCommentResponse());
+            if(boardCommunicateComment.getMension() != 0) mensionList.add(boardCommunicateComment.toBoardCommentResponse());
             else boardCommentResponseList.add(boardCommunicateComment.toBoardCommentResponse());
         }
 

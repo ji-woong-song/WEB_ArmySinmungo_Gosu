@@ -47,7 +47,7 @@ public class BoardFreeCommentService {
 
         for(int i = 0; i<boardFreeCommentList.size(); i++) {
             BoardFreeComment boardFreeComment = boardFreeCommentList.get(i);
-            if(boardFreeComment.getMension() != null) mensionList.add(boardFreeComment.toBoardCommentResponse());
+            if(boardFreeComment.getMension() != 0) mensionList.add(boardFreeComment.toBoardCommentResponse());
             else boardCommentResponseList.add(boardFreeComment.toBoardCommentResponse());
         }
 
