@@ -85,10 +85,16 @@ def rank_keywords(keytags, content_data):
 
 #insert_2 : keywordranking
 def analysis_keywordrank_insertion(conn, cursor, unit_code, branch_unit1, branch_unit2, keyworddict):
-    cursor.execute(SQL.keywordrank_insert_sqlline, (unit_code,branch_unit1,branch_unit2,
-                    keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
-                    keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
-    conn.commit()
+    try:
+        cursor.execute(SQL.keywordrank_update_sqlline(keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
+                    keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1],
+                    unit_code,branch_unit1,branch_unit2))
+        conn.commit()
+    except:
+        cursor.execute(SQL.keywordrank_insert_sqlline, (unit_code,branch_unit1,branch_unit2,
+                        keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
+                        keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
+        conn.commit()
     return True
 
 #select_1 : attention keyword(will be used in keyword detection)
@@ -144,8 +150,11 @@ def post_selection(post_name, cursor, user_info_id):
     try:
         cursor.execute(SQL.post_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
+        #under line : if 
         test = data[0]['title']
     except:
         cursor.execute(SQL.comment_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
     return data
+
+    #have to be recodded
