@@ -45,8 +45,12 @@ def analysis_posnegneu(content_data):
 
 # #insert_1 : posnegneu
 def analysis_posnegneu_insertion(conn, cursor, unit_code, branch_unit_1, branch_unit_2, pos, neg, neu):
-    cursor.execute(SQL.posnegneu_insert_sqlline,(unit_code, branch_unit_1,branch_unit_2,pos,neg,neu))
-    conn.commit()
+    try:
+        cursor.execute(SQL.posnegneu_update_sqlline,(pos, neg, neu, unit_code, branch_unit_1, branch_unit_2))
+        conn.commit()
+    except:
+        cursor.execute(SQL.posnegneu_insert_sqlline,(unit_code, branch_unit_1,branch_unit_2,pos,neg,neu))
+        conn.commit()
     return True
 
 
