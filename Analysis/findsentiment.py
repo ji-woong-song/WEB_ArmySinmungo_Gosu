@@ -10,15 +10,19 @@ This part will use naver clova sentiment.
 
 #import modules and data
 import requests
-import sys
-import json
 import clovainfo
+import json
 
-#get sentiment
+# get sentiment
+
 def get_sentiment(content):
-    url = clovainfo.url
-    header = {'X-NCP-APIGW-API-KEY-ID': clovainfo.key_id,
-            'X-NCP-APIGW-API-KEY' : clovainfo.key_pw,
+    """
+    find sentiment in sentence (use naver clova sentiment API)
+    :param content: sentence
+    """
+    url = clovainfo.URL
+    header = {'X-NCP-APIGW-API-KEY-ID': clovainfo.KEY_ID,
+            'X-NCP-APIGW-API-KEY' : clovainfo.KEY_PW,
             'Content-Type':'application/json'
             }
     data = {
@@ -34,6 +38,10 @@ def get_sentiment(content):
 
 #analysis sentiment
 def analysis_sentiment(response):
+    """
+    analysis pos, neg, neu in response.
+    :param response: return of get_sentiment
+    """
     neg_num = 0
     pos_num = 0
     neu_num = 0

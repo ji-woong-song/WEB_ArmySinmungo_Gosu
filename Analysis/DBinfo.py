@@ -1,10 +1,11 @@
-#DBinfo
+# DB_INFO
 
-rds_host = "armysinmungo.cabw8bx503cg.ap-northeast-2.rds.amazonaws.com"
-rds_port = 3306
-rds_dbname = 'armysinmungo'
-rds_username = 'admin'
-rds_password = 'hackathon'
+RDS_HOST = "armysinmungo.cabw8bx503cg.ap-northeast-2.rds.amazonaws.com"
+RDS_PORT = 3306
+RDS_DBNAME = 'armysinmungo'
+RDS_USERNAME = 'admin'
+RDS_PASSWORD = 'hackathon'
 
 def info_in():
-    return rds_host,rds_port,rds_dbname,rds_username,rds_password
+    db_info = RDS_HOST,RDS_PORT,RDS_DBNAME,RDS_USERNAME,RDS_PASSWORD
+    return db_info

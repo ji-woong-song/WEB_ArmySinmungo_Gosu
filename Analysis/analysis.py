@@ -7,9 +7,6 @@ Analysis.
 """
 
 #import
-import DBinfo
-import clovainfo
-import connectDB
 import findsentiment
 import Keyword
 import morphemeanalysis
@@ -33,7 +30,7 @@ def analysis_posnegneu(content_data):
         contentlist.append(content[(len(content)//1000)*1000:])
         title_pos_num, title_neg_num, title_neu_num = findsentiment.analysis_sentiment(findsentiment.get_sentiment(title))
         for con in contentlist:
-            content_pos_num, content_neg_num, content_neu_num = findsentiment.analysis_sentiment(findsentiment.get_sentiment(content))
+            content_pos_num, content_neg_num, content_neu_num = findsentiment.analysis_sentiment(findsentiment.get_sentiment(con))
             pos_num = pos_num + content_pos_num
             neg_num = neg_num + content_neg_num
             neu_num = neg_num + content_neu_num
@@ -43,7 +40,7 @@ def analysis_posnegneu(content_data):
     return pos_num, neg_num, neu_num
 
 
-# #insert_1 : posnegneu
+#insert_1 : posnegneu
 def analysis_posnegneu_insertion(conn, cursor, unit_code, branch_unit_1, branch_unit_2, pos, neg, neu):
     try:
         cursor.execute(SQL.posnegneu_update_sqlline,(pos, neg, neu, unit_code, branch_unit_1, branch_unit_2))
@@ -90,7 +87,7 @@ def analysis_keywordrank_insertion(conn, cursor, unit_code, branch_unit1, branch
                     keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1],
                     unit_code,branch_unit1,branch_unit2))
         conn.commit()
-    except:
+    except Exception:
         cursor.execute(SQL.keywordrank_insert_sqlline, (unit_code,branch_unit1,branch_unit2,
                         keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
                         keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
@@ -111,16 +108,16 @@ def keyword_selection(cursor, unit, branch_unit1, branch_unit2):
         return False
 
 #analysis_3 : keyword detection
-def detect_keyword(content_data, keywordfindlist, board):
+def detect_keyword(content_data, keywordfindlist):
     treatkeywordfindlist = Keyword.pre_treat_keyword(keywordfindlist)
-    keyworddetectiondict = dict()
+    keyworddetectiondict = {}
     for data in content_data:
         try:
             title = data['title']
             content = data['content']
-        except:
+        except KeyError:
             content = data['content']
-        id = data['board_'+board+'_id']
+        id = data['id']
         detectdict, detect = Keyword.recognition(title+' '+content, treatkeywordfindlist, id)
         if detect == False:
             continue
@@ -128,7 +125,7 @@ def detect_keyword(content_data, keywordfindlist, board):
             try:
                 keyworddetectiondict[morpheme][1] = keyworddetectiondict[morpheme][1] + detectdict[morpheme][1]
                 keyworddetectiondict[morpheme][2].append(detectdict[morpheme][2][0])
-            except:
+            except KeyError:
                 keyworddetectiondict[morpheme] = detectdict[morpheme]
     return keyworddetectiondict
 
@@ -150,11 +147,16 @@ def post_selection(post_name, cursor, user_info_id):
     try:
         cursor.execute(SQL.post_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
-        #under line : if 
-        test = data[0]['title']
     except:
-        cursor.execute(SQL.comment_selection_sqlline %(str(post_name), user_info_id))
-        data = cursor.fetchall()
+        data = False
     return data
 
     #have to be recodded
+
+def comment_selection(board_name, cursor, user_info_id):
+    try:
+        cursor.execute(SQL.comment_selection_sqlline %(str(board_name), user_info_id))
+        data = cursor.fetchall()
+    except:
+        data = False
+    return data

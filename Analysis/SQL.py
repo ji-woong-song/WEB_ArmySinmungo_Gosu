@@ -6,15 +6,10 @@ This python file have SQL lines.
 
 """
 
-#import
-from pymysql import NULL
-import pymysql
-import connectDB
-
 #user_info
 # id, birth, branch_unit1, branch_unit2, cellphone, discharge_date, enlist_date, mil_num, unit_code, user_pw, user_rank
 
-post_selection_sqlline = '''SELECT id, title, content FROM board_%s WHERE id =%s'''
+post_selection_sqlline = '''SELECT id, title, content FROM board_%s WHERE user_info_id =%s'''
 
 comment_selection_sqlline = '''SELECT id, content FROM board_%s WHERE id =%s'''
 

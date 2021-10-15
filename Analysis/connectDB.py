@@ -21,13 +21,8 @@ pip install libbz2-dev
 
 
 #import
-import sys
-import os
-import requests
-import base64
-import json
+
 import pymysql
-import csv
 
 #connecting rds
 def connect_RDB(line):
@@ -35,7 +30,8 @@ def connect_RDB(line):
     try:
         connection = pymysql.connect(host=host,port=port,db=dbname,user=username,passwd=password,use_unicode=True,charset='utf8')
         cursor = connection.cursor(pymysql.cursors.DictCursor)
-    except:
-        print("Error")
-        exit()
+    except Exception as ex:
+        print("Error at connecting_RDB : "+ex)
+        cursor = False
+        connection = False
     return connection, cursor

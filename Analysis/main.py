@@ -9,6 +9,8 @@ main.
 
 #import
 from analysis import *
+import DBinfo
+import connectDB
 
 
 #exmaple_variables
@@ -25,14 +27,15 @@ content_data = [{'id' : 11111, 'title' : '삶이란 어떤 것일까.', 'content
 
 #variables
 boardlist = ['free_post']
-keywordnumlist = list()
-keyworddetectiondict = dict()
-numkeyworddict = dict()
-rankdict = dict()
+keywordnumlist = []
+keyworddetectiondict = {}
+numkeyworddict = {}
+rankdict = {}
 keytags = ['NNG','NNP','NP','VV']
 pos_num = 0
 neg_num = 0
 neu_num = 0
+COUNT = 0
 
 #DB open
 conn, cursor = connectDB.connect_RDB(DBinfo.info_in())
@@ -42,40 +45,63 @@ keywordfindlist = keyword_selection(cursor, unit, branch_unit1, branch_unit2)
 
 #load users id in unit.
 cursor.execute(SQL.load_users_id_sqlline, unit)
-user_ids = list()
-for id in cursor.fetchall():
-    user_ids.append(id['id'])
+user_ids = []
+for user_id in cursor.fetchall():
+    user_ids.append(user_id['id'])
 
-for id in user_ids:
+for user_id in user_ids:
     for board in boardlist:
-        content_data = post_selection(board,cursor,id)
-        detectdict = detect_keyword(content_data, keywordfindlist, board)
+        content_data = post_selection(board,cursor,user_id)
+        comment_data = comment_selection(board,cursor,user_id)
+        if content_data==False and comment_data==False:
+            print("Content and comment Not loaded")
+            print("user_id :" + user_id)
+            print("board : "+board)
+            continue
+        elif content_data==False:
+            print("Content Not loaded")
+            print("user_id :" + user_id)
+            print("board : "+board)
+            content_data = comment_data
+        elif comment_data==False:
+            print("Comment Not loaded")
+            print("user_id :" + user_id)
+            print("board : "+board)
+        elif content_data==() and comment_data==():
+            print("There is no data in id : "+user_id+", board : "+board)
+            continue
+        elif content_data==():
+            content_data = comment_data
+        elif comment_data==():
+            print(" ")
+        else:
+            content_data.append(comment_data)
+        detectdict = detect_keyword(content_data, keywordfindlist)
         localrankdict = rank_keywords(keytags, content_data)
         lpos_num, lneg_num, lneu_num = analysis_posnegneu(content_data)
         for morpheme in detectdict:
             try:
                 keyworddetectiondict[morpheme][1] = keyworddetectiondict[morpheme][1] + detectdict[morpheme][1]
                 keyworddetectiondict[morpheme][2].append(detectdict[morpheme][2][0])
-            except:
+            except KeyError:
                 keyworddetectiondict[morpheme] = detectdict[morpheme]
         pos_num = pos_num + lpos_num
         neg_num = neg_num + lneg_num
         neu_num = neu_num + lneu_num
         keywordnumlist.append(localrankdict.values())
 
-for sets in keywordnumlist:
-    for set in sets:
+for kwsets in keywordnumlist:
+    for kwset in kwsets:
         try:
-            numkeyworddict[set[1]].append(set[0])
-        except:
-            numkeyworddict[set[1]] = [set[0]]
+            numkeyworddict[kwset[1]].append(kwset[0])
+        except KeyError:
+            numkeyworddict[kwset[1]] = [kwset[0]]
 
-    count = 0
 for key in sorted(numkeyworddict.keys(),reverse=True):
     for values in numkeyworddict[key]:
-        count = count + 1
-        if count <= 10:
-            rankdict[count] = [values, key]
+        COUNT = COUNT + 1
+        if COUNT <= 10:
+            rankdict[COUNT] = [values, key]
         else:
             break
 
