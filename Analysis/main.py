@@ -8,6 +8,7 @@ main.
 
 
 #import
+from pymysql import NULL
 from analysis import *
 import DBinfo
 import connectDB
@@ -53,17 +54,17 @@ for user_id in user_ids:
     for board in boardlist:
         content_data = post_selection(board,cursor,user_id)
         comment_data = comment_selection(board,cursor,user_id)
-        if content_data==False and comment_data==False:
+        if content_data is False and comment_data is False:
             print("Content and comment Not loaded")
             print("user_id :" + user_id)
             print("board : "+board)
             continue
-        elif content_data==False:
+        elif content_data is False:
             print("Content Not loaded")
             print("user_id :" + user_id)
             print("board : "+board)
             content_data = comment_data
-        elif comment_data==False:
+        elif comment_data is False:
             print("Comment Not loaded")
             print("user_id :" + user_id)
             print("board : "+board)
@@ -75,20 +76,23 @@ for user_id in user_ids:
         elif comment_data==():
             print(" ")
         else:
-            content_data.append(comment_data)
-        detectdict = detect_keyword(content_data, keywordfindlist)
+            content_data.append(comment_data)     
         localrankdict = rank_keywords(keytags, content_data)
         lpos_num, lneg_num, lneu_num = analysis_posnegneu(content_data)
+        pos_num = pos_num + lpos_num
+        neg_num = neg_num + lneg_num
+        neu_num = neu_num + lneu_num
+        keywordnumlist.append(localrankdict.values())
+        detectdict = detect_keyword(content_data, keywordfindlist)
+        if detectdict is False:
+            continue       
         for morpheme in detectdict:
             try:
                 keyworddetectiondict[morpheme][1] = keyworddetectiondict[morpheme][1] + detectdict[morpheme][1]
                 keyworddetectiondict[morpheme][2].append(detectdict[morpheme][2][0])
             except KeyError:
                 keyworddetectiondict[morpheme] = detectdict[morpheme]
-        pos_num = pos_num + lpos_num
-        neg_num = neg_num + lneg_num
-        neu_num = neu_num + lneu_num
-        keywordnumlist.append(localrankdict.values())
+        
 
 for kwsets in keywordnumlist:
     for kwset in kwsets:
@@ -104,6 +108,11 @@ for key in sorted(numkeyworddict.keys(),reverse=True):
             rankdict[COUNT] = [values, key]
         else:
             break
+
+while COUNT <= 10:
+    COUNT = COUNT + 1
+    rankdict[COUNT] = [NULL, NULL]
+
 
 all_num = pos_num + neg_num + neu_num
 pos_percent = pos_num / all_num

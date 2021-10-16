@@ -22,7 +22,7 @@ def analysis_posnegneu(content_data):
         try:
             title = data['title']
             content = data['content']
-        except:
+        except Exception:
             content = data['content']
         contentlist = list()
         for i in range(len(content)//1000):
@@ -43,10 +43,10 @@ def analysis_posnegneu(content_data):
 #insert_1 : posnegneu
 def analysis_posnegneu_insertion(conn, cursor, unit_code, branch_unit_1, branch_unit_2, pos, neg, neu):
     try:
-        cursor.execute(SQL.posnegneu_update_sqlline,(pos, neg, neu, unit_code, branch_unit_1, branch_unit_2))
-        conn.commit()
-    except:
         cursor.execute(SQL.posnegneu_insert_sqlline,(unit_code, branch_unit_1,branch_unit_2,pos,neg,neu))
+        conn.commit()
+    except Exception:
+        cursor.execute(SQL.posnegneu_update_sqlline,(pos, neg, neu, unit_code, branch_unit_1, branch_unit_2))
         conn.commit()
     return True
 
@@ -59,7 +59,7 @@ def rank_keywords(keytags, content_data):
         try:
             title = data['title']
             content = data['content']
-        except:
+        except KeyError:
             content = data['content']
         datamorphemes, datamorphemescount = morphemeanalysis.pcs_morphemes(title+' '+content,keytags)
         for i in datamorphemescount:
@@ -89,8 +89,8 @@ def analysis_keywordrank_insertion(conn, cursor, unit_code, branch_unit1, branch
         conn.commit()
     except Exception:
         cursor.execute(SQL.keywordrank_insert_sqlline, (unit_code,branch_unit1,branch_unit2,
-                        keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
-                        keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
+                    keyworddict[1][0],keyworddict[2][0],keyworddict[3][0],keyworddict[4][0],keyworddict[5][0],keyworddict[6][0],keyworddict[7][0],keyworddict[8][0],keyworddict[9][0],keyworddict[10][0],
+                    keyworddict[1][1],keyworddict[2][1],keyworddict[3][1],keyworddict[4][1],keyworddict[5][1],keyworddict[6][1],keyworddict[7][1],keyworddict[8][1],keyworddict[9][1],keyworddict[10][1]))
         conn.commit()
     return True
 
@@ -104,7 +104,7 @@ def keyword_selection(cursor, unit, branch_unit1, branch_unit2):
             if key.find("keyword") == 0 and data[0][key] != pymysql.NULL:
                 keywordlist.append([key,data[0][key]])
         return keywordlist
-    except:
+    except Exception:
         return False
 
 #analysis_3 : keyword detection

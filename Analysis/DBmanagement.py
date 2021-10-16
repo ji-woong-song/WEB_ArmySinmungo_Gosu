@@ -136,5 +136,5 @@ sqlinsert_anal_keyset = '''insert into analysis_attention_keywords (analysis_att
 
 sqlinsert_unit_info = '''insert into unit_info (id, unit_belong, unit_code, unit_name) values (%s, %s, %s, %s)'''
 
-cursor.execute('SELECT id, title, content, user_info_id FROM board_free_post WHERE user_info_id=12345')
-SELECT_print_well(cursor.fetchall())
+cursor.execute('select * from analysis_posnegneu')
+print(cursor.fetchall())
