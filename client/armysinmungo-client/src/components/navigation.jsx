@@ -40,22 +40,22 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='/tmo'  style={{color : 'black'}}>
+              <a href='/free'  style={{color : 'black'}}>
                 생각쓰기
               </a>
             </li>
             <li>
-              <a href='/#px'  style={{color : 'black'}}>
+              <a href='/debate'  style={{color : 'black'}}>
                 토론하기
               </a>
             </li>
             <li>
-              <a href='hotel'  style={{color : 'black'}}>
+              <a href='/letter'  style={{color : 'black'}}>
                 소원수리
               </a>
             </li>
 			      <li>
-              <a href='/#golf'  style={{color : 'black'}}>
+              <a href='/analysis'  style={{color : 'black'}}>
                 빅데이터
               </a>
             </li>

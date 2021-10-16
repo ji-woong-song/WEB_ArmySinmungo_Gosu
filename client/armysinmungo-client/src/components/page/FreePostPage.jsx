@@ -5,7 +5,7 @@ import Comment from '../Comment';
 import qs from 'qs';
 
 
-const CommunicatePostPage = (props) => {
+const FreePostPage = (props) => {
     // query 파라미터
 	const query = qs.parse(props.location.search, {
         ignoreQueryPrefix: true
@@ -22,7 +22,7 @@ const CommunicatePostPage = (props) => {
 	});
 
 	const getData = () => { 
-		fetch(`/board/communicate/post/${postId}`)
+		fetch(`/board/free/post/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 				setPost(data.data); 
@@ -32,7 +32,7 @@ const CommunicatePostPage = (props) => {
 	}
 	
 	const getCommentList = () => {
-		fetch(`/board/communicate/comment/${postId}`)
+		fetch(`/board/free/comment/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 			   setCommentList(data.data);
@@ -40,7 +40,7 @@ const CommunicatePostPage = (props) => {
 	}
 
 	const submitComment = () => {
-		fetch("/board/communicate/comment", {
+		fetch("/board/free/comment", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json;charset=UTF-8",
@@ -208,4 +208,4 @@ const CommunicatePostPage = (props) => {
 	);
 }
 
-export default CommunicatePostPage;
+export default FreePostPage;

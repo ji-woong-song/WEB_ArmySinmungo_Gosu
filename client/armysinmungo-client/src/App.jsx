@@ -1,14 +1,17 @@
 import MainPage from './components/page/MainPage';
+
 import CommunicatePage from './components/page/CommunicatePage';
 import CommunicateWritePage from './components/page/CommunicateWritePage';
 import CommunicatePostPage from './components/page/CommunicatePostPage';
-import HotelPage from './components/page/HotelPage';
-import TmoPage from './components/page/TmoPage';
+
+import FreePage from './components/page/FreePage';
+import FreeWritePage from './components/page/FreeWritePage';
+import FreePostPage from './components/page/FreePostPage';
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { useState } from 'react';
 import { signIn } from './components/auth';
 import LoginPage from './components/page/LoginPage';
-import AuthRoute from './components/AuthRoute';
+
 
 const App = () => {
 
@@ -26,8 +29,13 @@ const App = () => {
           <Route exact path="/communicate" component={CommunicatePage} />
           <Route exact path="/communicate-write" component={CommunicateWritePage} />
           <Route exact path="/communicate-post" component={CommunicatePostPage} />
-          <Route exact path="/hotel" component={HotelPage} /> 
-          <Route exact path="/tmo" component={TmoPage} /> 
+
+          <Route exact path="/free" component={FreePage} />
+          <Route exact path="/free-write" component={FreeWritePage} />
+          <Route exact path="/free-post" component={FreePostPage} />
+
+          
+
           </> 
           : 
           <>
