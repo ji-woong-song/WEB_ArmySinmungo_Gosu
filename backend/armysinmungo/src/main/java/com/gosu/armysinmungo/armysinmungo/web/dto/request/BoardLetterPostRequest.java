@@ -1,12 +1,12 @@
 package com.gosu.armysinmungo.armysinmungo.web.dto.request;
 
-import lombok.Setter;
 import lombok.Getter;
 
-@Getter @Setter
-public class BoardCommunicateCommentRequest {
-    private Long mension = 0L;
+@Getter
+public class BoardLetterPostRequest {
+    private String title;
     private String content;
+    private String category;
+    private String tagged;
     private String milNum;
-    private Long id;
 }
