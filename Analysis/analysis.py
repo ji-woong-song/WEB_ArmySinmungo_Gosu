@@ -147,7 +147,7 @@ def post_selection(post_name, cursor, user_info_id):
     try:
         cursor.execute(SQL.post_selection_sqlline %(str(post_name), user_info_id))
         data = cursor.fetchall()
-    except:
+    except Exception:
         data = False
     return data
 
@@ -157,6 +157,6 @@ def comment_selection(board_name, cursor, user_info_id):
     try:
         cursor.execute(SQL.comment_selection_sqlline %(str(board_name), user_info_id))
         data = cursor.fetchall()
-    except:
+    except Exception:
         data = False
     return data

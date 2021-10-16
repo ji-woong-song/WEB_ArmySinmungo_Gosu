@@ -11,12 +11,6 @@ to use this, you have to do this
 
 pip install pymysql
 
-pip install pandas
-
-sudo -i apt-get install libbz2-dev
-
-pip install libbz2-dev
-
 """
 
 
