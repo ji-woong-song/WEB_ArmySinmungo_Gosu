@@ -8,4 +8,5 @@ public class BoardFreeCommentRequest {
     private Long mension = 0L;
     private String content;
     private Long id;
+    private String milNum;
 }

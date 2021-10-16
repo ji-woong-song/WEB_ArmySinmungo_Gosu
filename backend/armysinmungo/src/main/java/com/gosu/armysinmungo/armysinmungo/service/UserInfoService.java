@@ -23,4 +23,9 @@ public class UserInfoService {
         return userInfo;
     }
 
+    public UserInfo findByMilNum(String milNum) {
+        UserInfo userInfo = userInfoRepository.findByMilNum(milNum).get();
+        return userInfo;
+    }
+
 }

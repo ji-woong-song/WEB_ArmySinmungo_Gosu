@@ -38,7 +38,7 @@ public class BoardFreeCommentController {
     @PostMapping("/board/free/comment")
     public ResponseEntity<BasicResponse> postBoardFreeComment(@RequestBody BoardFreeCommentRequest boardFreeCommentRequest) {
 
-        UserInfo userInfo = userInfoService.findById(54321L);
+        UserInfo userInfo = userInfoService.findByMilNum(boardFreeCommentRequest.getMilNum());
         BoardFreePost boardFreePost = boardFreePostService.findById(boardFreeCommentRequest.getId());
 
         BoardFreeComment boardFreeComment =
