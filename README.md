@@ -1,15 +1,22 @@
 # 국방신문고 : Armysinmungo
 ![Logo](./logo.jpg)
 
-
+<br>
 
 ## 프로젝트 소개
-군 생활 중 장병들이 겪는 불편하거나 힘들었던 일, 고충 등 개선이 필요한 부분들을 소통하고, 해결방안을 제시할 수 있는 공간을 제공하며, 지휘관이 의견을 수렴해 조치 할 수 있도록 돕기 위함입니다. 이 공간에 올라오는 글들을 데이터화 하여 중요한 문제를 발굴하고(육훈소 마스크, 성추행 등), 확인된 문제들을 지휘관이 확인하여 조치가 필요한 곳에 적절한 조치할 수 있도록 하며, 더 정확히 문제를 이해하여 효과적으로 문제를 해결하도록 돕습니다. 또한 데이터화된 정보들이 국방개혁등에 사용될 수 있을것입니다.
+  &nbsp;&nbsp;이 프로젝트는 군 생활 중 장병들이 겪는 불편하거나 힘들었던 일, 고충 등 개선이 필요한 부분들을 소통하고, 해결방안을 제시할 수 있는 공간을 제공하며, 지휘관이 의견을 수렴해 조치 할 수 있도록 돕기 위해 기획되었습니다. 이 공간에 올라오는 글들을 데이터화 하여 중요한 문제를 발굴하고(육훈소 마스크, 성추행 등), 확인된 문제들을 지휘관이 확인하여 조치가 필요한 곳에 적절한 조치할 수 있도록 하며, 더 정확히 문제를 이해하여 효과적으로 문제를 해결하도록 돕습니다.<br><br>
+ &nbsp;&nbsp;국방신문고는 이런 사람들에게 필요합니다.
+ - 문제를 겪고있으나 보고에 벽이 느껴지는 장병
+ - 중요한 문제를 알리고 개선하고자 하는 장병
+ - 다른 중대,대대,부대 등과 소통하고 싶은 장병
+ - 부대의 숨은 문제를 파악하고 해결하고자 하는 지휘관
+ - 문제의 개선방안을 제안하고싶은 아이디어 넘치는 장병
 
 
 
 ## 기능 설명
- - 설명 기입
+### 개요
+국방신문고는 문제해결을 돕기 위해 소통할 수 있는 게시판을 제공합니다. 그리고 게시되는 글들을 분석하여 제공함으로써 지휘관이 제기된 문제를 해결할 수 있도록 돕습니다.
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 * ECMAScript 6 지원 브라우저 사용
@@ -67,7 +74,7 @@ $ pip install requests
     <tbody>	
         <tr>
             <td width="100" align="center">김강년</td>
-            <td width="250">학과</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상명대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;융합공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SW융합학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터과학전공</td>
             <td width="150" align="center">	
                 <a href="https://github.com/pop7523">
                 <img src="https://img.shields.io/badge/pop7523-655ced?style=social&logo=github"/>
@@ -80,7 +87,7 @@ $ pip install requests
         </tr>       
         <tr>
             <td width="100" align="center">이형우</td>
-            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨여융합학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨여융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
             <td width="150" align="center">	
                 <a href="https://github.com/TheBreeze129">
                 <img src="https://img.shields.io/badge/TheBreeze129-655ced?style=social&logo=github"/>
@@ -93,7 +100,7 @@ $ pip install requests
         </tr>        
         <tr>
             <td width="100" align="center">정성훈</td>
-            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨어융합학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨어융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
             <td width="150" align="center">	
                 <a href="https://github.com/swa07016">
                 <img src="https://img.shields.io/badge/swal07016-655ced?style=social&logo=github"/>
@@ -106,7 +113,7 @@ $ pip install requests
         </tr>        
         <tr>
         <td width="100" align="center">송지웅</td>
-        <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;정보통신컴퓨터공학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+        <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학전공</td>
         <td width="150" align="center">	
             <a href="https://github.com/shortboy7">
             <img src="https://img.shields.io/badge/shortboy7-655ced?style=social&logo=github"/>
