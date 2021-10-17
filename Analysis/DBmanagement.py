@@ -113,10 +113,10 @@ def SELECT_print_well(data):
     key = data[0].keys()
     strformat = ''
     for i in key:
-        if len(str(data[0][i])) < 10 and len(str(i)) < 10 :
-            strformat = strformat + '| %-10s'
-        else:
+        if len(str(data[0][i])) < 15 and len(str(i)) < 15 :
             strformat = strformat + '| %-15s'
+        else:
+            strformat = strformat + '| %-30s'
     strformat = strformat + "|"
     print(strformat % tuple(key))
     for dic in data:
@@ -135,6 +135,6 @@ sqlinsert_anal_keyset = '''insert into analysis_attention_keywords (analysis_att
                 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
 
 sqlinsert_unit_info = '''insert into unit_info (id, unit_belong, unit_code, unit_name) values (%s, %s, %s, %s)'''
-
-cursor.execute('select * from analysis_posnegneu')
-print(cursor.fetchall())
+a= '5군단'
+cursor.execute("""select unit_code, unit_belong, unit_name from unit_info where unit_belong like '%s'""" %('%'+a+'%'))
+SELECT_print_well(cursor.fetchall())

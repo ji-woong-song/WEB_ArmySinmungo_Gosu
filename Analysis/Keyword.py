@@ -32,7 +32,6 @@ def recognition(sentences, keywordset, id):
     to detect(recongize) keyword in sentence.
     :param sentences: sentences
     :param keywordset: keywords
-    :param id: 
     """
     keywords = []
     for i in keywordset:
@@ -49,7 +48,7 @@ def recognition(sentences, keywordset, id):
             try:
                 recognizedict[key[0]][1] = recognizedict[i] + 1
                 recognizedict[key[0]][2].append(id)
-            except:
+            except KeyError:
                 recognizedict[key[0]] = [key[1], 1,[id]]
             recognize = True
     return recognizedict, recognize
