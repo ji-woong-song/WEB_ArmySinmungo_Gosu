@@ -120,7 +120,7 @@ const FreePage = () => {
 					<button type="button" className="btn btn-info" style={{
 						fontSize: '17px',
 						float: 'right'
-					}} onClick={()=>window.location.href='/Free-write'}>글쓰기</button>
+					}} onClick={()=>window.location.href='/free-write'}>글쓰기</button>
 				</div>
 
 				<div className="row" style={{
