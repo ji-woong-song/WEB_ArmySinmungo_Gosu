@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Navigation } from '../navigation'
 import Footer from '../Footer';
 
-const FreeWritePage = () => {
+const DebateWritePage = () => {
 
 	const [form, setForm] = useState({
 		title: '',
@@ -21,7 +21,7 @@ const FreeWritePage = () => {
 	};
 
 	const submitPost = () =>{ 
-		fetch("/board/free/post", {
+		fetch("/board/debate/theme", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -38,7 +38,7 @@ const FreeWritePage = () => {
   		.then((data) => {
 			  if(data.status === 'CREATED') {
 				  alert("등록 완료");
-				  window.location.href="/free";
+				  window.location.href="/debate";
 			  }
 		  });
 	}
@@ -148,7 +148,7 @@ const FreeWritePage = () => {
 						color: 'white',
 						padding: '10px 20px',
 						marginLeft: '10px'
-					}} onClick={()=>window.location.href="/free"}>취소</button>
+					}} onClick={()=>window.location.href="/debate"}>취소</button>
 
 					<button className="btn btn-primary" style={{
 						float: 'right',
@@ -172,4 +172,4 @@ const FreeWritePage = () => {
 	);
 }
 
-export default FreeWritePage;
+export default DebateWritePage;

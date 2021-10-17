@@ -8,6 +8,8 @@ const users = [
 ]
 
 export function signIn({ userId, password }) {
+    // 서버랑 통신해서 status에 따라 구분
+    
     const user = users.find(
         (user) => user.userId === userId && user.password === password
       );

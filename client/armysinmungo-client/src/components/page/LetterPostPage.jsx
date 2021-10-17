@@ -5,7 +5,7 @@ import Comment from '../Comment';
 import qs from 'qs';
 
 
-const FreePostPage = (props) => {
+const LetterPostPage = (props) => {
     // query 파라미터
 	const query = qs.parse(props.location.search, {
         ignoreQueryPrefix: true
@@ -22,7 +22,7 @@ const FreePostPage = (props) => {
 	});
 
 	const getData = () => { 
-		fetch(`/board/free/post/${postId}`)
+		fetch(`/board/letter/post/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 				setPost(data.data); 
@@ -32,7 +32,7 @@ const FreePostPage = (props) => {
 	}
 	
 	const getCommentList = () => {
-		fetch(`/board/free/comment/${postId}`)
+		fetch(`/board/letter/comment/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 			   setCommentList(data.data);
@@ -40,7 +40,7 @@ const FreePostPage = (props) => {
 	}
 
 	const submitComment = () => {
-		fetch("/board/free/comment", {
+		fetch("/board/letter/comment", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json;charset=UTF-8",
@@ -100,7 +100,7 @@ const FreePostPage = (props) => {
 					fontWeight: '100',
 					fontSize: '70px',
 					color: 'rgb(59, 78, 50)'
-					}}>토론하기 / 글</div>
+					}}>소원수리 / 글</div>
 			</div>
 			<div className="container" style={{
 					paddingTop:'50px',
@@ -208,4 +208,4 @@ const FreePostPage = (props) => {
 	);
 }
 
-export default FreePostPage;
+export default LetterPostPage;

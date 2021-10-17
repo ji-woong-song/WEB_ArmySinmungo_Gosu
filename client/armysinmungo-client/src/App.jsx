@@ -8,17 +8,22 @@ import FreePage from './components/page/FreePage';
 import FreeWritePage from './components/page/FreeWritePage';
 import FreePostPage from './components/page/FreePostPage';
 
+import DebatePage from './components/page/DebatePage';
+import DebateWritePage from './components/page/DebateWritePage';
+import DebatePostPage from './components/page/DebatePostPage';
+
+import LetterPage from './components/page/LetterPage';
+import LetterWritePage from './components/page/LetterWritePage';
+import LetterPostPage from './components/page/LetterPostPage';
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { signIn } from './components/auth';
 import LoginPage from './components/page/LoginPage';
-
+import SignupPage from './components/page/SignupPage';
 
 const App = () => {
 
   const login = ({userId, password}) => signIn({ userId, password });
-  const logout = () => {
-    localStorage.removeItem("userName");
-  } 
 
   return (
     <Router>
@@ -34,19 +39,27 @@ const App = () => {
           <Route exact path="/free-write" component={FreeWritePage} />
           <Route exact path="/free-post" component={FreePostPage} />
 
-          
+          <Route exact path="/debate" component={DebatePage} />
+          <Route exact path="/debate-write" component={DebateWritePage} />
+          <Route exact path="/debate-post" component={DebatePostPage} />
+
+          <Route exact path="/letter" component={LetterPage} />
+          <Route exact path="/letter-write" component={LetterWritePage} />
+          <Route exact path="/letter-post" component={LetterPostPage} />
 
           </> 
           : 
           <>
-          <Redirect path="/*" to="/login"/>
+      
+          {/* <Redirect path="/" to="/login"/> */}
           <Route exact path="/login" 
                  render={() => <LoginPage 
                                 login={login}
-                                />}/> 
+                                />}/>
+          <Route exact path="/signup" 
+                 render={() => <SignupPage />}/>                         
           </>
            }
-			{/*<Route component={NotFound} />*/}
         </Switch>
     </Router>
   )

@@ -5,7 +5,7 @@ import Comment from '../Comment';
 import qs from 'qs';
 
 
-const FreePostPage = (props) => {
+const DebatePostPage = (props) => {
     // query 파라미터
 	const query = qs.parse(props.location.search, {
         ignoreQueryPrefix: true
@@ -15,14 +15,17 @@ const FreePostPage = (props) => {
 	const [commentList, setCommentList] = useState([]);
 	const [post, setPost] = useState({});
 	const [uploadDate, setUploadDate] = useState('');
+	const [agreeNum, setAgreeNum] = useState(0);
+	const [disagreeNum, setDisAgreeNum] = useState(0);
 	const [form, setForm] = useState({
 		mension: 0,
 		content: '',
-		id: postId
+		id: postId,
+		agreeDisagree: ''
 	});
 
 	const getData = () => { 
-		fetch(`/board/free/post/${postId}`)
+		fetch(`/board/debate/theme/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 				setPost(data.data); 
@@ -32,15 +35,25 @@ const FreePostPage = (props) => {
 	}
 	
 	const getCommentList = () => {
-		fetch(`/board/free/comment/${postId}`)
+		fetch(`/board/debate/comment/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
-			   setCommentList(data.data);
+			  setCommentList(data.data);	
 			});
+
 	}
 
+
+	useEffect(()=>{
+		for(let i=0; i<commentList.length; i++) {
+			console.log(commentList[i]);
+			if(commentList[i].agreeDisagree === 'AGREE') setAgreeNum(agreeNum+1);
+		 	else setDisAgreeNum(disagreeNum + 1);	
+		}
+	}, [commentList]);
+
 	const submitComment = () => {
-		fetch("/board/free/comment", {
+		fetch("/board/debate/comment", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json;charset=UTF-8",
@@ -50,7 +63,8 @@ const FreePostPage = (props) => {
 				"mension" : form.mension,
 				"content" : form.content,
 				"id" : form.id,
-				"milNum": localStorage.getItem("userMilNum")
+				"milNum": localStorage.getItem("userMilNum"),
+				"agreeDisagree": form.agreeDisagree
 			})
 		})
 		.then(res => res.json())
@@ -143,6 +157,8 @@ const FreePostPage = (props) => {
 					<span style={{fontSize: '19px'}}><span style={{color: 'black'}}>정성훈</span> 님의 글</span>
 					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; <span>{uploadDate}</span></span>
 					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; 댓글 : <span>{commentList ? commentList.length : 0}</span></span>
+					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; 찬성 : <span>{agreeNum ? agreeNum : 0}</span></span>
+					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; 반대 : <span>{disagreeNum ? disagreeNum : 0}</span></span>
 				</div>
 				
 				<div className="row"style={{
@@ -157,7 +173,7 @@ const FreePostPage = (props) => {
 					marginTop: '35px',
 					marginBottom: '35px',
 				}}>
-					<div className="col-md-11" style={{
+					<div className="col-md-10" style={{
 						padding: '0'
 					}}>
 						<textarea rows="2" style={{
@@ -168,6 +184,20 @@ const FreePostPage = (props) => {
 							resize: 'none'
 						}} placeholder="당신 의견을 등록해 주세요. 주제와 무관한 댓글이나 악플은 삭제될 수 있습니다."
 							value={form.content} onChange={onChangeHandler} name="content"/>	
+					</div>
+					<div className="col-md-1" style={{
+						padding: '0',
+					}}>
+						<select className="form-control" style={{
+							width: '100%',
+							fontSize: '19px',
+							height: '106px',
+							borderRadius: '0'
+						}} value={form.agreeDisagree} onChange={onChangeHandler} name="agreeDisagree">
+							<option selected="selected">선택</option>
+							<option value="AGREE">찬성</option>
+							<option value="DISAGREE">반대</option>
+						</select>
 					</div>
 					<div className="col-md-1" style={{
 						padding: '0',
@@ -208,4 +238,4 @@ const FreePostPage = (props) => {
 	);
 }
 
-export default FreePostPage;
+export default DebatePostPage;
