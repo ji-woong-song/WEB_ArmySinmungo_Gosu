@@ -74,7 +74,7 @@ $ pip install requests
     <tbody>	
         <tr>
             <td width="100" align="center">김강년</td>
-            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상명대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;융합공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SW융합학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터과학전공</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상명대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;융합공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SW융합학부<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터과학전공</td>
             <td width="150" align="center">	
                 <a href="https://github.com/pop7523">
                 <img src="https://img.shields.io/badge/pop7523-655ced?style=social&logo=github"/>
@@ -87,7 +87,7 @@ $ pip install requests
         </tr>       
         <tr>
             <td width="100" align="center">이형우</td>
-            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨여융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨여융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
             <td width="150" align="center">	
                 <a href="https://github.com/TheBreeze129">
                 <img src="https://img.shields.io/badge/TheBreeze129-655ced?style=social&logo=github"/>
@@ -100,7 +100,7 @@ $ pip install requests
         </tr>        
         <tr>
             <td width="100" align="center">정성훈</td>
-            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨어융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소프트웨어융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
             <td width="150" align="center">	
                 <a href="https://github.com/swa07016">
                 <img src="https://img.shields.io/badge/swal07016-655ced?style=social&logo=github"/>
@@ -113,7 +113,7 @@ $ pip install requests
         </tr>        
         <tr>
         <td width="100" align="center">송지웅</td>
-        <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학전공</td>
+        <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학전공</td>
         <td width="150" align="center">	
             <a href="https://github.com/shortboy7">
             <img src="https://img.shields.io/badge/shortboy7-655ced?style=social&logo=github"/>
