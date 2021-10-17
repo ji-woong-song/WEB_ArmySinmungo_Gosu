@@ -40,6 +40,10 @@ const LetterPostPage = (props) => {
 	}
 
 	const submitComment = () => {
+		if(!(form.content)) {
+            alert("입력란을 전부 작성하세요.");
+            return ;
+        }
 		fetch("/board/letter/comment", {
 			method: "POST",
 			headers: {
@@ -50,7 +54,7 @@ const LetterPostPage = (props) => {
 				"mension" : form.mension,
 				"content" : form.content,
 				"id" : form.id,
-				"milNum": localStorage.getItem("userMilNum")
+				"milNum": localStorage.getItem("milNum")
 			})
 		})
 		.then(res => res.json())
@@ -140,7 +144,7 @@ const LetterPostPage = (props) => {
 					border: '1px solid #ddd',
 					marginTop: '10px'
 				}}>
-					<span style={{fontSize: '19px'}}><span style={{color: 'black'}}>정성훈</span> 님의 글</span>
+					<span style={{fontSize: '19px'}}><span style={{color: 'black'}}>{post.userName}</span> 님의 글</span>
 					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; <span>{uploadDate}</span></span>
 					<span style={{fontSize: '19px'}}> &nbsp;|&nbsp; 댓글 : <span>{commentList ? commentList.length : 0}</span></span>
 				</div>
@@ -182,7 +186,7 @@ const LetterPostPage = (props) => {
 				</div>
 
 				<div className="row">
-					{commentList.map((item) => 
+					{commentList && commentList.map((item) => 
 					<Comment
 						key={item.id}
 						agreeDisagree={item.agreeDisagree}

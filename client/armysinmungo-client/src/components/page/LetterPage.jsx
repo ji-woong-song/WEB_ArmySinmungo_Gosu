@@ -62,13 +62,29 @@ const LetterPage = () => {
 					</div>
 				</div>
 				
+
+				<div className="row" style={{
+					 marginLeft: '0',
+					 marginTop: '35px',
+					 fontSize: '25px',
+					 marginRight: '0',
+					 textAlign: 'center'
+					  }}>
+					<span style={{ color : 'black' }}>{localStorage.getItem("unitBelong") && (localStorage.getItem("unitBelong") + " " + localStorage.getItem("unitName"))}</span>
+				</div>
+				<hr style={{
+					width: '100%',
+					backgroundColor: '#2d2d2d'
+				}}/>
+
+
 				<div className="row" style={{
 					 marginLeft: '0',
 					 marginTop: '35px',
 					 fontSize: '20px',
 					 marginRight: '0'
 					  }}>
-					<span>총 <span style={{ color : 'black' }}>{postList.length}건</span></span> | <span style={{color : 'black'}}>최신순</span>
+					<span>총 <span style={{ color : 'black' }}>{ postList ? postList.length : 0}건</span></span> | <span style={{color : 'black'}}>최신순</span>
 
 					<button type="button" className="btn btn-info" style={{
 						fontSize: '17px',
@@ -80,7 +96,22 @@ const LetterPage = () => {
 					marginTop: '20px',
 					marginBottom: '20px',
 				}}>
-					{postList.map((item) => (
+					{postList && localStorage.getItem("rank") === 'SOLDIER' && postList.map((item) => (
+						item.userName === localStorage.getItem("userName") &&
+						<PostCard
+							type={'letter'}
+							key={item.id}
+							id={item.id}
+							agreeNum={item.agreeNum}
+							category={item.category}
+							content={item.content}
+							title={item.title}
+							tagged={item.tagged}
+							uploadTime={item.uploadTime}
+							userName={item.userName}
+						/>
+					)).reverse() }
+					{postList && localStorage.getItem("rank") === 'COMMANDER' && postList.map((item) => (
 						<PostCard
 							type={'letter'}
 							key={item.id}

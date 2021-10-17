@@ -3,9 +3,6 @@ import { Navigation } from '../navigation'
 import { Header } from '../header'
 import { Benefit } from '../benefit'
 import { Tmo } from '../tmo'
-import { Px } from '../px'
-import { Hotel } from '../hotel'
-import { Golf } from '../golf'
 import Footer from '../Footer';
 
 import JsonData from '../../data/data.json'
@@ -28,10 +25,7 @@ const MainPage = () => {
       <Navigation />
       <Header data={landingPageData.Header} />
       <Benefit data={landingPageData.Features} />
-	  <Tmo data={landingPageData.Features} />
-	  {/* <Px data={landingPageData.Features} />
-	  <Hotel data={landingPageData.Features} />
-	  <Golf data={landingPageData.Features} /> */}
+  	  <Tmo data={landingPageData.Features} />
 	  <Footer />
     </div>
   )

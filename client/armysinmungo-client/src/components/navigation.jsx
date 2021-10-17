@@ -2,8 +2,10 @@ export const Navigation = (props) => {
   
   const logoutHandler = () => {
     localStorage.removeItem("userName");
-    localStorage.removeItem("userRole");
-    localStorage.removeItem("userMilNum");
+    localStorage.removeItem("milNum");
+    localStorage.removeItem("rank");
+    localStorage.removeItem("unitBelong");
+    localStorage.removeItem("unitName");
     window.location.href = "/login";
   }
   

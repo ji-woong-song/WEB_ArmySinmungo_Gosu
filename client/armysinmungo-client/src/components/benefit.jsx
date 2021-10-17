@@ -18,27 +18,34 @@ export const Benefit = (props) => {
                 <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_2.png" alt="" 
                       style={{float: 'right'}}/>
               </div>
-              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left' }}>생각쓰기</div>
+              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left',
+              cursor: 'pointer'
+            }} onClick={() => window.location.href='/communicate-write'}>소통하기</div>
             </div>
           </div>
           
           <div className="col-md-3" style={{borderLeft: '1px solid gray'}} >
             <div className="row">
               <div className="col-sm-12 col-md-6">
-                <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_3.png" alt="" 
+              <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_1.png" alt="" 
                       style={{float: 'right'}}/>
+                
               </div>
-              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left' }}>생각쓰기</div>
+              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left',
+                cursor: 'pointer',
+              }} onClick={() => window.location.href='/free-write'}>생각쓰기</div>
             </div>
           </div>
 
           <div className="col-md-3" style={{borderLeft: '1px solid gray'}}>
             <div className="row">
               <div className="col-sm-12 col-md-6">
-                <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_1.png" alt="" 
+              <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_3.png" alt="" 
                       style={{float: 'right'}}/>
               </div>
-              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left' }}>생각쓰기</div>
+              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left',
+              cursor: 'pointer'
+            }} onClick={() => window.location.href='/debate-write'}>토론하기</div>
             </div>
           </div>
 
@@ -48,7 +55,8 @@ export const Benefit = (props) => {
                 <img src="https://www.epeople.go.kr/resource/images/paid/nep/thk/main/s1_item_icon_4.png" alt="" 
                       style={{float: 'right'}}/>
               </div>
-              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left' }}>생각쓰기</div>
+              <div className="col-sm-12 col-md-6 h4" style={{ color: 'black', fontSize: '21px', textAlign:'left',
+            cursor: 'pointer' }} onClick={() => window.location.href='/letter-write'}>소원수리</div>
             </div>
           </div>
 

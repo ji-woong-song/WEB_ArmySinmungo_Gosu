@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { Redirect } from 'react-router';
 
-const LoginPage = ({authenticated, login}) => {
+const LoginPage = () => {
 
     const [form, setForm] = useState({
-        userId: '',
+        milNum: '',
         password: ''
     });
 
@@ -18,17 +17,39 @@ const LoginPage = ({authenticated, login}) => {
 	};
 
     const submitLogin = () => {
-        const { userId, password } = form;
-        try {
-            login({userId, password});
-            window.location.href="/";
-        } catch(e) {
-            alert("군번 또는 비밀번호가 일치하지 않습니다.");
-            setForm({
-                userId: '',
-                password: ''
-            })
+        if(!(form.milNum && form.password)) {
+            alert("입력란을 전부 작성하세요.");
+            return ;
         }
+        fetch("/board/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				"milNum" : form.milNum,
+				"password" : form.password
+			})
+		})
+		.then((response) => response.json())
+  		.then((data) => {
+			  if(data.status === 'OK') {
+				  const userInfo = data.data;
+                  localStorage.setItem("userName", userInfo.userName);
+                  localStorage.setItem("milNum", userInfo.milNum);
+                  localStorage.setItem("rank", userInfo.rank);
+                  localStorage.setItem("unitBelong", userInfo.unitBelong);
+                  localStorage.setItem("unitName", userInfo.unitName);
+				  window.location.href="/";
+			  } else {
+                  alert(data.message);
+                  setForm({
+                        milNum: "",
+                        password: ''
+                  })
+              }
+		  })
+
     }
 
     return (
@@ -69,8 +90,8 @@ const LoginPage = ({authenticated, login}) => {
                         verticalAlign: 'middle',
                         padding: '15px',
                         marginBottom: '10px'
-                    }} placeholder="군번을 입력하세요." name="userId"
-                    value={form.userId} onChange={onChangeHandler}/>
+                    }} placeholder="군번을 입력하세요." name="milNum"
+                    value={form.milNum} onChange={onChangeHandler}/>
                     <input type="password" style={{
                         fontSize: '20px',
                         border: '1px solid #d2d2d2',

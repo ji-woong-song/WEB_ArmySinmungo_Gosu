@@ -21,6 +21,10 @@ const LetterWritePage = () => {
 	};
 
 	const submitPost = () =>{ 
+		if(!(form.title && form.content && form.tagged && form.category)) {
+            alert("입력란을 전부 작성하세요.");
+            return ;
+        }
 		fetch("/board/letter/post", {
 			method: "POST",
 			headers: {
@@ -31,7 +35,7 @@ const LetterWritePage = () => {
 				"content" : form.content,
 				"tagged" : form.tagged,
 				"category" : form.category,
-				"milNum": localStorage.getItem("userMilNum")
+				"milNum": localStorage.getItem("milNum")
 			})
 		})
 		.then((response) => response.json())

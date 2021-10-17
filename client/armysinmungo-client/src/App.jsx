@@ -28,6 +28,8 @@ const App = () => {
   return (
     <Router>
         <Switch>
+          <Route exact path="/signup" 
+                 render={() => <SignupPage />}/>   
           {localStorage.getItem("userName") ? 
           <>
           <Route exact path="/" component={MainPage}/>
@@ -51,13 +53,10 @@ const App = () => {
           : 
           <>
       
-          {/* <Redirect path="/" to="/login"/> */}
+          <Redirect from="/*" to="/login"/>
           <Route exact path="/login" 
-                 render={() => <LoginPage 
-                                login={login}
-                                />}/>
-          <Route exact path="/signup" 
-                 render={() => <SignupPage />}/>                         
+                 render={() => <LoginPage />}/>
+                      
           </>
            }
         </Switch>

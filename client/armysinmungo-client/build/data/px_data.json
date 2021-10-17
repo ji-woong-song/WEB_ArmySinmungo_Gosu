@@ -1,0 +1,82 @@
+[
+  {
+    "name": "닥터지 블랙 스네일 크림_50ml",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/black-snail.jpg"
+  },
+  {
+    "name": "Dr.G레드-블래미쉬클리어크림_70ml",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/red-blemish.jpg"
+  },
+  {
+    "name": "메디힐 캘러스 멀티 골드 리프팅 크림",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/multi-gold.jpg"
+  },
+  {
+    "name": "다이아몬드 리페어 퍼펙트 세트",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/diamond.png"
+  },
+  {
+    "name": "닥터지 레드 블레미쉬 멀티 플루이드_100ml",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/multi-fluid.jpg"
+  },
+  {
+    "name": "닥터지 레드 블레미쉬 수딩 토너_400ml",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/soothing-toner.jpg"
+  },
+  {
+    "name": "참존 마유크림 엑스트라 골든컴플렉스",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/horse-oil.jpg"
+  },
+  {
+    "name": "메디힐 더블유에이치피 미백수분 블랙 마스크 이엑스",
+    "type": "cosmetic",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/cosmetic/mask.jpg"
+  },
+  {
+    "name": "홍삼원세트",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/hongsam-one.jpg"
+  },
+  {
+    "name": "홍삼진고",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/hongsam-jingo.jpg"
+  },
+  {
+    "name": "홍삼보운",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/hongsam-boun.jpg"
+  },
+  {
+    "name": "홍삼정옥고",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/hongsam-jeong.jpg"
+  },
+  {
+    "name": "박카스에이 캔",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/bakas.jpg"
+  },
+  {
+    "name": "보온대(충성핫팩)주머니난로",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/hot.jpg"
+  },
+  {
+    "name": "몽쉘딸기케이크",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/cake.jpg"
+  },
+  {
+    "name": "포카리스웨트 분말",
+    "type": "etc",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/swa07016/huesist-cdn@latest/px/etc/pocari.jpg"
+  }
+]

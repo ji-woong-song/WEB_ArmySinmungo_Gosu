@@ -1,6 +1,19 @@
 import KakaoMap from './KakaoMap.js';
 
 export const Tmo = (props) => {
+
+	const showUserInfo = () => {
+		let message = "";
+		const userRank = localStorage.getItem("rank") === "SOLDIER" ? "병사" : "지휘관";
+		message += `이름 : ${localStorage.getItem("userName")}\n`;
+		message += `군번 : ${localStorage.getItem("milNum")}\n`;
+		message += `부대 : ${localStorage.getItem("unitBelong")}\n`;
+		message += `대대 : ${localStorage.getItem("unitName")}\n`;
+		message += `구분 : ${userRank}`;
+
+		alert(message);
+	}
+
   return (
     <div id='tmo' className='text-center'>
       <div className='container'>
@@ -13,11 +26,12 @@ export const Tmo = (props) => {
 				backgroundColor: 'white',
 				width: "48%"
 				 }}>
-					 <h3 style={{
-						 fontSize: '24px',
+					 <div style={{
+						 fontSize: '30px',
 						 marginTop: '5px',
 						 marginBottom: '30px',
-					 }}>오늘의 생각</h3>
+						 color: '#333'
+					 }}>오늘의 생각</div>
 					<a style={{
 						display:'block',
 						textOverflow: 'ellipsis',
@@ -179,11 +193,12 @@ export const Tmo = (props) => {
 				width: "48%",
 				float: 'right' }}>
 
-					<h3 style={{
-						 fontSize: '24px',
+					<div style={{
+						 fontSize: '30px',
 						 marginTop: '5px',
 						 marginBottom: '30px',
-					 }}>이렇게 실현되었습니다!</h3>
+						 color: '#333'
+					 }}>우리부대 빅데이터</div>
 
 			</div>
 		</div>
@@ -194,14 +209,46 @@ export const Tmo = (props) => {
 				border: "1px solid #c3c3c3",
 				height: '70px',
 				width: "48%",
-			}}> test</div>
+				fontSize: '30px',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				color: '#333'
+			}}>
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+				&nbsp;{localStorage.getItem("unitBelong")}</div>
 
 			<div className="col-md-5 col-sm-12" style={{ 
 				backgroundColor: 'white',
-				border: "1px solid #c3c3c3",
 				height: '70px',
 				width: "48%",float: 'right',
-				backgroundColor: '#018f7f' }}> test</div>
+				}}>
+				<div className="row">
+					<div className="col-md-6" style={{
+						backgroundColor: '#018f7f',
+						height: '100%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						color: 'white',
+						fontSize: '30px',
+						cursor: 'pointer'
+					}} onClick={showUserInfo}> 내 정보 </div>
+
+					<div className="col-md-6" style={{
+						backgroundColor: '#feb511',
+						height: '100%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						color: 'black',
+						fontSize: '30px',
+						cursor: 'pointer'
+					}} onClick={() => window.location.href="https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu"}> 국방신문고 </div>
+				</div>
+			</div>
 
 		</div>
 
