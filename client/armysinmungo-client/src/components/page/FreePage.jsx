@@ -2,18 +2,22 @@ import { useState, useEffect } from 'react'
 import { Navigation } from '../navigation'
 import PostCard from '../PostCard';
 import Footer from '../Footer';
+import Spinner from '../Spinner';
 
 const FreePage = () => {
 
 
 	const [postList, setPostList] = useState([]);
+	const [spinner, setSpinner] = useState(false);
 
   const getData = () =>{ 
+	  setSpinner(true);
 	fetch("/board/free/post/all")
 	.then((response) => response.json())
 	  .then((data) => {
 		  console.log(data.data);
 		setPostList(data.data);
+		setSpinner(false);
 	  });
 	}
 
@@ -108,6 +112,9 @@ const FreePage = () => {
 					backgroundColor: '#2d2d2d'
 				}}/>
 
+					<div>
+                        {spinner && <Spinner/>}
+                    </div>
 
 				<div className="row" style={{
 					 marginLeft: '0',

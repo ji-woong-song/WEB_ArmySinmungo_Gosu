@@ -31,36 +31,13 @@ export const Tmo = (props) => {
 						 marginTop: '5px',
 						 marginBottom: '30px',
 						 color: '#333'
-					 }}>오늘의 생각</div>
-					<a style={{
-						display:'block',
-						textOverflow: 'ellipsis',
-    					whiteSpace: 'nowrap',
-						overflow: 'hidden',
-						color: 'black',
-						marginTop: '13px',
-					}}>
-						
-						<span style={{
-							display: 'inline-block',
-							height: '35px',
-							borderRadius: '40px',
-							backgroundColor: '#0b845b',
-							color: 'white',
-							padding: '5px 10px',
-							fontSize: '20px',
-							verticalAlign: '1px',
-							marginRight: '10px',
-						}}
-						
-						>대화</span>
+					 }}>오늘의 이야기</div>
 
-						<span style={{
-							fontSize: '22px'
-						}}> 
-						1. 유튜브 미디어 등등 전세계 언어 자막 제작 지원이 필요한 모든 사회에 전세계 언어 자막 제작 지원을 무한대로 잘 해서 문화 교류가 최고로 좋은 전세계 융합 글로벌 사회를 잘 만듭시다.
-						</span>
-					</a>
+
+					 <div style={{
+						 textAlign: 'left',
+						 padding: '0 80px',
+					 }}>
 
 					<a style={{
 						display:'block',
@@ -83,12 +60,12 @@ export const Tmo = (props) => {
 							marginRight: '10px',
 						}}
 						
-						>대화</span>
+						>소통</span>
 
 						<span style={{
 							fontSize: '22px'
 						}}> 
-						1. 유튜브 미디어 등등 전세계 언어 자막 제작 지원이 필요한 모든 사회에 전세계 언어 자막 제작 지원을 무한대로 잘 해서 문화 교류가 최고로 좋은 전세계 융합 글로벌 사회를 잘 만듭시다.
+							일일취사 도우미 불편사항
 						</span>
 					</a>
 
@@ -105,7 +82,7 @@ export const Tmo = (props) => {
 							display: 'inline-block',
 							height: '35px',
 							borderRadius: '40px',
-							backgroundColor: '#0b845b',
+							backgroundColor: 'rgb(86, 169, 2)',
 							color: 'white',
 							padding: '5px 10px',
 							fontSize: '20px',
@@ -113,13 +90,12 @@ export const Tmo = (props) => {
 							marginRight: '10px',
 						}}
 						
-						>대화</span>
+						>토론</span>
 
 						<span style={{
 							fontSize: '22px'
 						}}> 
-						1. 유튜브 미디어 등등 전세계 언어 자막 제작 지원이 필요한 모든 사회에 전세계 언어 자막 제작 지원을 무한대로 잘 해서 문화 교류가 최고로 좋은 전세계 융합 글로벌 사회를 잘 만듭시다.
-						</span>
+휴가 누구부터 보내야 하는가?</span>
 					</a>
 
 					<a style={{
@@ -135,7 +111,7 @@ export const Tmo = (props) => {
 							display: 'inline-block',
 							height: '35px',
 							borderRadius: '40px',
-							backgroundColor: '#017ca5',
+							backgroundColor: 'rgb(1, 124, 165)',
 							color: 'white',
 							padding: '5px 10px',
 							fontSize: '20px',
@@ -143,13 +119,12 @@ export const Tmo = (props) => {
 							marginRight: '10px',
 						}}
 						
-						>투표</span>
+						>생각</span>
 
 						<span style={{
 							fontSize: '22px'
 						}}> 
-						1. 유튜브 미디어 등등 전세계 언어 자막 제작 지원이 필요한 모든 사회에 전세계 언어 자막 제작 지원을 무한대로 잘 해서 문화 교류가 최고로 좋은 전세계 융합 글로벌 사회를 잘 만듭시다.
-						</span>
+본부중대 영외급식 메뉴 추천						</span>
 					</a>
 
 					<a style={{
@@ -165,7 +140,7 @@ export const Tmo = (props) => {
 							display: 'inline-block',
 							height: '35px',
 							borderRadius: '40px',
-							backgroundColor: '#0b845b',
+							backgroundColor: 'rgb(1, 124, 165)',
 							color: 'white',
 							padding: '5px 10px',
 							fontSize: '20px',
@@ -173,15 +148,43 @@ export const Tmo = (props) => {
 							marginRight: '10px',
 						}}
 						
-						>대화</span>
+						>생각</span>
 
 						<span style={{
 							fontSize: '22px'
 						}}> 
-						1. 유튜브 미디어 등등 전세계 언어 자막 제작 지원이 필요한 모든 사회에 전세계 언어 자막 제작 지원을 무한대로 잘 해서 문화 교류가 최고로 좋은 전세계 융합 글로벌 사회를 잘 만듭시다.
-						</span>
+코로나 보상 휴가						</span>
 					</a>
 
+					<a style={{
+						display:'block',
+						textOverflow: 'ellipsis',
+    					whiteSpace: 'nowrap',
+						overflow: 'hidden',
+						color: 'black',
+						marginTop: '13px',
+					}}>
+						
+						<span style={{
+							display: 'inline-block',
+							height: '35px',
+							borderRadius: '40px',
+							backgroundColor: 'rgb(86, 169, 2)',
+							color: 'white',
+							padding: '5px 10px',
+							fontSize: '20px',
+							verticalAlign: '1px',
+							marginRight: '10px',
+						}}
+						
+						>토론</span>
+
+						<span style={{
+							fontSize: '22px'
+						}}> 
+테니스장, 병사가 제설해야 하는가?						</span>
+					</a>
+					</div>
 
 				 </div>
 			<div className="col-md-5 col-sm-12" 
@@ -200,6 +203,65 @@ export const Tmo = (props) => {
 						 color: '#333'
 					 }}>우리부대 빅데이터</div>
 
+					<div className="row" style={{
+						paddingTop: '15px',
+					}}>
+					 	<div className="col-md-6">
+						 <div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>1. 코로나</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>2. 근무</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>3. 휴가</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>4. 시간</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>5. 취사</div>
+
+						 </div>
+						 <div className="col-md-6">
+						 <div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>6. 힘들다</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>7. 감사</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>8. 신병</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>9. 무전</div>
+							<div style={{
+								fontSize: '20px',
+								marginBottom: '8px',
+								color: 'black'
+							}}>10. 제설</div>
+						 </div>
+					</div>
 			</div>
 		</div>
 

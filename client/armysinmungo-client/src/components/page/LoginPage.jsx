@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Spinner from '../Spinner';
 
 const LoginPage = () => {
 
@@ -7,6 +8,8 @@ const LoginPage = () => {
         milNum: '',
         password: ''
     });
+
+    const [spinner, setSpinner] = useState(false);
 
     const onChangeHandler = e => {
 		const nextForm = {
@@ -21,6 +24,7 @@ const LoginPage = () => {
             alert("입력란을 전부 작성하세요.");
             return ;
         }
+        setSpinner(true);
         fetch("/board/login", {
 			method: "POST",
 			headers: {
@@ -48,6 +52,7 @@ const LoginPage = () => {
                         password: ''
                   })
               }
+              setSpinner(false);
 		  })
 
     }
@@ -60,6 +65,13 @@ const LoginPage = () => {
             alignItems: 'center',
             justifyContent: 'center'
         }}>
+            <div style={{
+                        position: 'fixed',
+                        zIndex: 999
+                    }}>
+                        {spinner && <Spinner/>}
+                    </div>
+
             <div className="row">
                 <div className="col-md-4" style={{
                     width: '415px',
@@ -67,6 +79,7 @@ const LoginPage = () => {
                     padding: '30px',
                     border:'1px solid #e8e8e8'
                 }}>
+                                      
                     <h1 className="text-center" style={{
                         fontSize: '34px',
                         color: 'black',

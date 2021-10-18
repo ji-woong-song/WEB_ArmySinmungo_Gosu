@@ -3,7 +3,7 @@ import { Navigation } from '../navigation'
 import Footer from '../Footer';
 import Comment from '../Comment';
 import qs from 'qs';
-
+import Spinner from '../Spinner';
 
 const LetterPostPage = (props) => {
     // query 파라미터
@@ -11,6 +11,10 @@ const LetterPostPage = (props) => {
         ignoreQueryPrefix: true
       });
 	const postId = query.id;
+
+	const [commentSpinner, setCommentSpinner] = useState(false);
+	const [postSpinner, setPostSpinner] = useState(false);
+
 
 	const [commentList, setCommentList] = useState([]);
 	const [post, setPost] = useState({});
@@ -22,20 +26,24 @@ const LetterPostPage = (props) => {
 	});
 
 	const getData = () => { 
+		setPostSpinner(true);
 		fetch(`/board/letter/post/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 				setPost(data.data); 
 			  const date = new Date(data.data.uploadTime);
 			  setUploadDate(date.getFullYear() + '/' + (date.getMonth()+1) + '/' + date.getDate());
+			  setPostSpinner(false);
 		});
 	}
 	
 	const getCommentList = () => {
+		setCommentSpinner(true);
 		fetch(`/board/letter/comment/${postId}`)
 		.then((response) => response.json())
 		  .then((data) => {
 			   setCommentList(data.data);
+			   setCommentSpinner(false);
 			});
 	}
 
@@ -110,6 +118,11 @@ const LetterPostPage = (props) => {
 					paddingTop:'50px',
 				}}>
 				
+				<div>
+                        {postSpinner && <Spinner/>}
+                    </div>
+
+
                 <div className="row">
                     <span style={{
                         display: 'inline-block',
@@ -186,6 +199,11 @@ const LetterPostPage = (props) => {
 				</div>
 
 				<div className="row">
+				<div>
+                        {commentSpinner && <Spinner/>}
+                    </div>
+
+
 					{commentList && commentList.map((item) => 
 					<Comment
 						key={item.id}

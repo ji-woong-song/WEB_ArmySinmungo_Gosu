@@ -84,7 +84,7 @@ const LetterWritePage = () => {
 						margin: '0 auto',
 						fontSize: '20px',
 					 }}>
-					함께 이야기하고 싶은 공공문제에 대한 여러분의 생각을 적어주세요!
+					지휘관에게 여러분들의 생각, 고민거리를 들려주세요!
 					</div>
 				</div>
 				

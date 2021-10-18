@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Spinner from '../Spinner';
 
 const SingupPage = ({authenticated, login}) => {
 
@@ -9,6 +10,8 @@ const SingupPage = ({authenticated, login}) => {
        passwordCheck: "",
        userName: ""
     });
+
+    const [spinner, setSpinner] = useState(false);
 
     const onChangeHandler = e => {
 		const nextForm = {
@@ -23,6 +26,14 @@ const SingupPage = ({authenticated, login}) => {
             alert("입력란을 전부 작성하세요.");
             return ;
         }
+
+        if(!(form.milNum.length == 11 || form.milNum.length == 8)) {
+            alert("군번은 xx-xxxxxxxx 또는 xx-xxxxx 형식이어야합니다.");
+            return ;
+        }
+
+
+        setSpinner(true);
         fetch("/board/signup", {
 			method: "POST",
 			headers: {
@@ -44,6 +55,7 @@ const SingupPage = ({authenticated, login}) => {
 			  } else {
                   alert(data.message);
               }
+              setSpinner(false);
 		  })
     }
 
@@ -55,6 +67,13 @@ const SingupPage = ({authenticated, login}) => {
             alignItems: 'center',
             justifyContent: 'center'
         }}>
+
+                <div style={{
+                        position: 'fixed',
+                        zIndex: 999
+                    }}>
+                        {spinner && <Spinner/>}
+                    </div>
             <div className="row">
                 <div className="col-md-4" style={{
                     width: '415px',

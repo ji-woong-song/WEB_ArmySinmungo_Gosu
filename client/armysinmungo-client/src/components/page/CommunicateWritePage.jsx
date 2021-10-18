@@ -84,7 +84,7 @@ const CommunicateWritePage = () => {
 						margin: '0 auto',
 						fontSize: '20px',
 					 }}>
-					함께 이야기하고 싶은 공공문제에 대한 여러분의 생각을 적어주세요!
+					소통을 통해 제기된 문제에 대한 여러분의 생각을 모와봅시다.
 					</div>
 				</div>
 				

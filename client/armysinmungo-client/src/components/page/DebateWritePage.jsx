@@ -84,7 +84,7 @@ const DebateWritePage = () => {
 						margin: '0 auto',
 						fontSize: '20px',
 					 }}>
-					함께 이야기하고 싶은 공공문제에 대한 여러분의 생각을 적어주세요!
+					우리가 제기했던 문제들에 대해 무엇이 더 합리적인지  토론해 봅시다.
 					</div>
 				</div>
 				

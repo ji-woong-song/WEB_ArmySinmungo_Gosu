@@ -84,7 +84,7 @@ const FreeWritePage = () => {
 						margin: '0 auto',
 						fontSize: '20px',
 					 }}>
-					함께 이야기하고 싶은 공공문제에 대한 여러분의 생각을 적어주세요!
+					공유하고 싶은 여러분의 생각들을 자유롭게 적어봅시다
 					</div>
 				</div>
 				

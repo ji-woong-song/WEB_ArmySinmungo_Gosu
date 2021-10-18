@@ -3,6 +3,7 @@ import { Navigation } from '../navigation'
 import PostCard from '../PostCard';
 import Footer from '../Footer';
 import PosNegChart  from '../PosNegChart';
+import KeywordChart from '../KeywordChart';
 
 const AnalysisPage = () => {
 
@@ -69,7 +70,7 @@ const AnalysisPage = () => {
 							height: '100%',
 						}}>
 							{ 
-							localStorage.getItem("COMMANDER") ?
+							localStorage.getItem("rank") === 'COMMANDER' ?
 							 <PosNegChart/> 
 							 : 
 							 <div style={{
@@ -240,10 +241,43 @@ const AnalysisPage = () => {
 						<div style={{
 							border: '1px solid rgb(221, 221, 221)',
 							height: '100%',
+							paddingTop: '57px',
+    						paddingRight: '27px'
 						}}>
-							<PosNegChart/>
+							{(
+							localStorage.getItem("rank") === "COMMANDER" ?
+							<KeywordChart/> : 
+							<div style={{
+								width: '100%',
+								height: '100%',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								color: 'black',
+								fontSize: '20px'
+							}}>
+								지휘관만 열람할 수 있습니다.
+							</div>)}
 						</div>		
 
+						{ localStorage.getItem("rank") === "COMMANDER" && (
+						<div style={{
+							marginTop: '10px',
+							fontSize: '20px',
+							color: 'rgb(59, 78, 50)'
+						}}>KEYWORD FREQUENCY</div>
+						)}
+
+						{  localStorage.getItem("rank") === "COMMANDER" && (
+							
+						<div style={{
+							marginTop: '10px',
+							fontSize: '20px',
+							color: 'black'
+						}}>
+							키워드들의 발생 빈도입니다.
+						</div>
+						)}
 					</div>
 					
 				</div>
