@@ -48,30 +48,51 @@ const AnalysisPage = () => {
 
 				<div className="row" style={{marginLeft: '0', marginRight: '0', 
 										marginTop: '40px', marginBottom: '100px'}}>
+					
 					<div className="col-md-5"
 						style={{
 
-							height: '400px',
+							height: '400px',	
 						
 						}}
 					>
+
 						<div style={{
 							fontSize: '22px',
 							textAlign: 'center',
 							color: 'black',
 							marginBottom: '10px',
 						}}>전체 글 긍부정 비율</div>
+						
 						<div style={{
 							border: '1px solid rgb(221, 221, 221)',
 							height: '100%',
 						}}>
-							<PosNegChart/>
+							{ 
+							localStorage.getItem("COMMANDER") ?
+							 <PosNegChart/> 
+							 : 
+							 <div style={{
+								 width: '100%',
+								 height: '100%',
+								 display: 'flex',
+								 alignItems: 'center',
+								 justifyContent: 'center',
+								 color: 'black',
+								 fontSize: '20px'
+							 }}>
+								 지휘관만 열람할 수 있습니다.
+							 </div>
+							 }
 						</div>
+
+						{ localStorage.getItem("rank") === 'COMMANDER' && (
 						<div style={{
 							marginTop: '10px',
 							fontSize: '20px',
 							color: 'black'
 						}}>
+
 							<span style={{
 								height: '20px', 
 								width: '30px',
@@ -97,8 +118,9 @@ const AnalysisPage = () => {
 								verticalAlign: '2px'
 							}}> : 부정</span>
 						</div>
+						)}
 
-
+{ localStorage.getItem("rank") === "COMMANDER" && (
 						<div style={{
 							marginTop: '10px',
 							fontSize: '20px',
@@ -110,9 +132,9 @@ const AnalysisPage = () => {
 							color: 'black'
 						}}>
 
-						</div>
+</div>
 							병사들이 작성한 전체글들 중 긍정적인 성격의 글, 부정적인 성격의 글들의 비율입니다.
-						</div>
+						</div>)}
 					</div>
 
 
@@ -131,60 +153,60 @@ const AnalysisPage = () => {
 						<div style={{
 						border: '1px solid rgb(221, 221, 221)',
 						height: '100%',
-						padding: '15px'
+						padding: '20px 30px'
 						}}>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>1. 키워드</div>
+							}}>1. 코로나</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>2. 키워드</div>
+							}}>2. 근무</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>3. 키워드</div>
+							}}>3. 휴가</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>4. 키워드</div>
+							}}>4. 시간</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>5. 키워드</div>
+							}}>5. 취사</div>
 
 
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>6. 키워드</div>
+							}}>6. 힘들다</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>7. 키워드</div>
+							}}>7. 감사</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>8. 키워드</div>
+							}}>8. 신병</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>9. 키워드</div>
+							}}>9. 무전</div>
 							<div style={{
 								fontSize: '20px',
 								marginBottom: '8px',
 								color: 'black'
-							}}>10. 키워드</div>
+							}}>10. 제설</div>
 						</div>
 
 

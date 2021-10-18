@@ -127,8 +127,8 @@ const DebateWritePage = () => {
 						<option value="군수">군수</option>
 						<option value="작전">작전</option>
 						<option value="정보">정보</option>
-						<option value="정보">병영생활</option>
-						<option value="정보">기타</option>
+						<option value="병영생활">병영생활</option>
+						<option value="기타">기타</option>
 					</select>
 
 					<textarea className="form-control" placeholder="내용을 입력해주세요. (500자 이하)"
