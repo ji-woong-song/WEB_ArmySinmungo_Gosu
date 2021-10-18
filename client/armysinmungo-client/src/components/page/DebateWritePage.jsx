@@ -124,6 +124,7 @@ const DebateWritePage = () => {
 						marginRight: '53px',
 					}} value={form.category} onChange={onChangeHandler} name="category">
 						<option value="선택" selected="selected">선택</option>
+						<option value="인사">인사</option>
 						<option value="군수">군수</option>
 						<option value="작전">작전</option>
 						<option value="정보">정보</option>
