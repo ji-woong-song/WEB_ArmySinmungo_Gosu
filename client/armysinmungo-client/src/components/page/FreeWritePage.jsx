@@ -124,9 +124,11 @@ const FreeWritePage = () => {
 						marginRight: '53px',
 					}} value={form.category} onChange={onChangeHandler} name="category">
 						<option value="선택" selected="selected">선택</option>
-						<option value="카테고리1">카테고리1</option>
-						<option value="카테고리2">카테고리2</option>
-						<option value="카테고리3">카테고리3</option>
+						<option value="군수">군수</option>
+						<option value="작전">작전</option>
+						<option value="정보">정보</option>
+						<option value="정보">병영생활</option>
+						<option value="정보">기타</option>
 					</select>
 
 					<textarea className="form-control" placeholder="내용을 입력해주세요. (500자 이하)"

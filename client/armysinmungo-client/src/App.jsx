@@ -16,6 +16,8 @@ import LetterPage from './components/page/LetterPage';
 import LetterWritePage from './components/page/LetterWritePage';
 import LetterPostPage from './components/page/LetterPostPage';
 
+import AnalysisPage from './components/page/AnalysisPage';
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { signIn } from './components/auth';
 import LoginPage from './components/page/LoginPage';
@@ -48,6 +50,8 @@ const App = () => {
           <Route exact path="/letter" component={LetterPage} />
           <Route exact path="/letter-write" component={LetterWritePage} />
           <Route exact path="/letter-post" component={LetterPostPage} />
+
+          <Route exact path="/analysis" component={AnalysisPage} />
 
           </> 
           : 
