@@ -28,6 +28,7 @@ def main(unit, branch_unit1, branch_unit2):
     pos_num = 0
     neg_num = 0
     neu_num = 0
+    detectdict = {}
     COUNT = 0
     ANALYSIS = True
 
@@ -132,10 +133,11 @@ def main(unit, branch_unit1, branch_unit2):
         print("Insert at DB Start....")
         analysis_posnegneu_insertion(conn, cursor, unit, branch_unit1, branch_unit2, pos_percent, neg_percent, neu_percent)
         print("Success : analysis_posnegneu")
-        analysis_keywordrank_insertion(conn,cursor, unit, branch_unit1,branch_unit2,rankdict)
-        print("Success : keywordranking")
         analysis_detect_insertion(conn, cursor, unit, branch_unit1, branch_unit2, keyworddetectiondict, board)
         print("Success : keyworddetection")
+        analysis_keywordrank_insertion(conn,cursor, unit, branch_unit1,branch_unit2,rankdict)
+        print("Success : keywordranking")
+        
 
     print("-"*20)
 

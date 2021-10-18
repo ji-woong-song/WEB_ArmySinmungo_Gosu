@@ -128,13 +128,47 @@ def SELECT_print_well(data):
 
 sqlline = ('desc analysis_attention_keywords')
 
-sqlinsert_user_info = '''insert into user_info (id, birth, branch_unit1, branch_unit2, cellphone, discharge_date, enlist_date, mil_num, unit_code, user_pw, user_rank)
-                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
+sqlinsert_user_info = '''insert into user_info (id, birth, branch_unit1, branch_unit2, cellphone, discharge_date, enlist_date, mil_num, unit_code, user_pw, user_rank, user_name)
+                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s)'''
 
 sqlinsert_anal_keyset = '''insert into analysis_attention_keywords (analysis_attention_keywords_id, unit_code, branch_unit1, branch_unit2, keyword_1, keyword_2, keyword_3, keyword_4, keyword_5, keyword_6, keyword_7, keyword_8, keyword_9, keyword_10)
                 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'''
 
 sqlinsert_unit_info = '''insert into unit_info (id, unit_belong, unit_code, unit_name) values (%s, %s, %s, %s)'''
 a= '5군단'
-cursor.execute("""select unit_code, unit_belong, unit_name from unit_info where unit_belong like '%s'""" %('%'+a+'%'))
+
+
+
+
+# file = open('Analysis/user_info_dummy.csv', 'r',encoding='CP949')
+
+# data = file.readlines()[1]
+# for i in [data]:
+#     i = i.strip('\n').split(',')
+#     name = i[0]
+#     user_id = i[1]
+#     bith = i[2]
+#     unit_code = 3
+#     branch_unit1 = '1'
+#     branch_unit2 = '2'
+#     phonenum = i[6]
+#     a = i[7].split('.')
+#     enlist_date = '20'+a[0]+'-'+a[1]+'-'+a[2]
+#     b = i[8].split('.')
+#     discharge_date = '20'+b[0]+'-'+b[1]+'-'+b[2]
+#     milnum = i[9]
+#     pw = i[10]
+#     rank = 'commander'
+#     cursor.execute(sqlinsert_user_info, (user_id, bith, branch_unit1, branch_unit2, phonenum, discharge_date, enlist_date, milnum, unit_code, pw, rank, name))
+#     conn.commit()
+
+
+
+
+# file.close()
+
+
+
+
+cursor.execute("""desc unit_info""")
 SELECT_print_well(cursor.fetchall())
