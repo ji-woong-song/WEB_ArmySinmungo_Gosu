@@ -669,7 +669,7 @@ $ pip install tweepy==3.10.0
  * [apache-2.0](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE_Webserver)
  * Copyright 2021 ARMYSINMUNGO_GOSU
  ### Analysis
- * [gpl-3.0+](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md
+ * [gpl-3.0+](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md)
  * Copyleft
  ### Frontend
  * [MIT](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md)
