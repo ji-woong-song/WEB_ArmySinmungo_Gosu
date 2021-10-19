@@ -124,8 +124,13 @@
 
 
  ### WebServer
+
+#### WebServer 소개
+ * 국방신문고의 웹 API 서버를 담당합니다.
+ * AWS RDS로 호스팅한 DB에 붙어서 Client의 요청에 맞게 데이터를 주고받는 역할을 합니다. 
+
  #### API mockserver 및 API 명세서 작성
-  * Frontend와의 개발 속도 차이 등의 이유로 mockserver 및 명세서를 작성하였습니다.
+  * Frontend와의 개발 속도 차이 등의 이유로 초기에 mockserver 및 API명세서를 작성하였습니다.
   <table width="100%">
     <thead>
         <tr>
@@ -156,6 +161,22 @@
 		</tr>
    </tbody>
 </table>
+
+
+
+#### 핵심 엔티티 ERD 설계
+ * 사진 집어넣기
+ * 테이블들 간략한 설명
+
+#### JPA 엔티티 
+ * 설계한 ERD를 바탕으로 프로젝트 domain 패키지에 JPA 엔티티를 구현했습니다.
+
+#### 웹 계층별 구현
+ * web / service / repository /domain 계층별로 패키지를 분리해 개발을 진행했습니다.
+ * web : controller와 dto가 포함되어 있으며 Client의 요청 및 응답을 담당합니다.
+ * service : controller와 repository의 중간 영역으로 비즈니스 로직들 및 트랜잭션을 담당합니다.
+ * repository : Spring Data JPA에서 제공하는 인터페이스를 상속받아 사용했으며 DB접근을 담당합니다.
+ * domain : Entity들이 모여있는 패키지입니다.
 
  # 웹서버 개발과정 부탁드려요...
 
