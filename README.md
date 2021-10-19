@@ -353,7 +353,37 @@ $ pip install tweepy==3.10.0
 
 ## 프로젝트 사용법 (Getting Started)
 ### Frontend
-
+#### 회원가입 및 로그인
+  <table width="100%">
+    <thead>
+        <tr>
+			<th style="text-align:center" width="50%">
+				<h4>회원가입</h4>
+			</th>
+            <th style="text-align:center" width="50%">
+				<h4>로그인</h4>
+			</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+			    <div align="center"><a href="https://user-images.githubusercontent.com/53550707/137887858-720bb204-5639-4b86-b196-ca3ff2772645.png"><img src="https://user-images.githubusercontent.com/53550707/137887858-720bb204-5639-4b86-b196-ca3ff2772645.png" width="100%"></a></div>
+            </td>
+            <td>
+				<div align="center"><a href="https://user-images.githubusercontent.com/53550707/137887955-a6c42f12-83ad-4ba7-832c-b61faf84f22b.png"><img src="https://user-images.githubusercontent.com/53550707/137887955-a6c42f12-83ad-4ba7-832c-b61faf84f22b.png" width="100%""></a></div>
+			</td>
+		</tr>
+        <tr>
+			<td>
+				가입 정보 입력 후 회원가입 진행
+			</td>
+            <td>
+				군번 및 비밀번호 입력 후 로그인 진행
+			</td>
+		</tr>
+   </tbody>
+</table>
 
 ### Backend : Webserver  
 #### DB 연결하기
