@@ -170,5 +170,5 @@ a= '5군단'
 
 
 
-cursor.execute("""desc unit_info""")
+cursor.execute("""select * from user_info""")
 SELECT_print_well(cursor.fetchall())
