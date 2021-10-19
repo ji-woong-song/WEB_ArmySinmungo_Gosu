@@ -17,12 +17,6 @@
  - 부대의 숨은 문제를 파악하고 해결하고자 하는 지휘관
  - 문제의 개선방안을 제안하고싶은 아이디어 넘치는 장병
 
-<<<<<<< HEAD
- ### DEMO : https://armysinmungo.netlify.app/
-
-<br><br>
-
-=======
 <br><br>
 
 ## 팀 정보 (Team Information)
@@ -97,7 +91,6 @@
 </table>
 
 
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 ## 기능 설명
 &nbsp;&nbsp;국방신문고는 문제해결을 돕기 위해 소통할 수 있는 게시판을 제공합니다. 그리고 게시되는 글들을 분석하여 제공함으로써 지휘관이 제기된 문제를 해결할 수 있도록 돕습니다.
 <br>
@@ -115,31 +108,18 @@
     <tbody>
         <tr>
             <td>
-<<<<<<< HEAD
-			    <div align="center"><a href="link"><img src="link" width="100%"></a></div>
-            </td>
-            <td>
-				<div align="center"><a href="link"><img src="link" width="100%""></a></div>
-=======
 			    <div align="center"><a href="./boardlist.jpg"><img src="./boardlist.jpg" width="100%"></a></div>
             </td>
             <td>
 				<div align="center"><a href="./write.jpg"><img src="./write.jpg" width="100%""></a></div>
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
         <tr>
 			<td>
-<<<<<<< HEAD
-				자유게시판 : 자유롭게 모든 주제의 이야기를 할 수 있습니다.<br>
-                소통게시판 : 자신의 이야기, 특히 소통이 필요한 이야기들을 올리는 목적입니다.<br>
-                토론게시판 : '이 주제에 대해 토론을 하고싶다!' 할 때 사용하는 게시판입니다.
-=======
                 소통하기 : 자신의 이야기, 특히 소통이 필요한 이야기들을 올리는 목적입니다.<br>
                 생각쓰기 : '나는 이거를 이렇게 생각한다!' 아이디어나 공동의 문제에 대한 해결책을 구하고 싶을 때 사용하는 게시판입니다.<br>
                 토론게시판 : '이 주제에 대해 토론을 하고싶다!' 할 때 사용하는 게시판입니다.<br>
                 소원수리 : 온라인으로 진행되는 개인고충 및 부대발전에 대한 제언을 작성하는 게시판입니다.
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
             <td>
 				게시판에 게시글을 작성할 수 있는 기능입니다.
@@ -162,17 +142,10 @@
     <tbody>
         <tr>
             <td>
-<<<<<<< HEAD
-			    <div align="center"><a href="link"><img src="link" width="100%"></a></div>
-            </td>
-            <td>
-				<div align="center"><a href="link"><img src="link" width="100%""></a></div>
-=======
 			    <div align="center"><a href="./comment.jpg"><img src="./comment.jpg" width="100%"></a></div>
             </td>
             <td>
 				<div align="center"><a href="./marpeon.jpg"><img src="./marpeon.jpg" width="100%""></a></div>
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
         <tr>
@@ -180,12 +153,8 @@
 				각 게시글에 대해 댓글을 작성할 수 있습니다.
 			</td>
             <td>
-<<<<<<< HEAD
-				어디서, 언제나 지휘관에게 자신의 이야기를 전할 수 있습니다.
-=======
 				어디서, 언제나 지휘관에게 자신의 이야기를 전할 수 있습니다.<br>
                 이 곳에 쓴 글은 글쓴이와 해당 지휘관만 열람 가능합니다.
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
    </tbody>
@@ -195,34 +164,20 @@
     <thead>
         <tr>
 			<th style="text-align:center" width="50%">
-<<<<<<< HEAD
-				<h4> 게시글 및 댓글 분석 </h4>
-			</th>
-            <th style="text-align:center" width="50%">
-				<h4> 온라인 개인고충 및 부대발전제언 </h4>
-=======
 				<h4> 게시글 및 댓글 분석 (지휘관이 아닌 장병이 보았을 때의 화면) </h4>
 			</th>
             <th style="text-align:center" width="50%">
 				<h4> 게시글 및 댓글 분석 (지휘관이 보았을 때의 화면)</h4>
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</th>
 		</tr>
     </thead>
     <tbody>
         <tr>
             <td>
-<<<<<<< HEAD
-			    <div align="center"><a href="link"><img src="link" width="100%"></a></div>
-            </td>
-            <td>
-				<div align="center"><a href="link"><img src="link" width="100%""></a></div>
-=======
 			    <div align="center"><a href="analysis_soldier.jpg"><img src="analysis_soldier.jpg" width="100%"></a></div>
             </td>
             <td>
 				<div align="center"><a href="./analysis_command.jpg"><img src="./analysis_command.jpg" width="100%""></a></div>
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
         <tr>
@@ -230,9 +185,6 @@
 				지휘관은 예하 장병이 올린 글에 대한 분석 결과를 볼 수 있습니다. 지휘관이 지정한 키워드에 대한 탐색 결과부터 예하 장병이 어떠한 키워드를 많이 썼는지, 예하 장병이 쓴 글이 긍정적인지, 부정적인지도 알 수 있습니다.
 			</td>
             <td>
-<<<<<<< HEAD
-				어디서, 언제나 지휘관에게 자신의 이야기를 전할 수 있습니다.
-=======
 				게시글, 댓글 긍부정, 키워드 탐색 결과는 다소 예민한 정보일 수 있으므로 지휘관에게만 제공됩니다.
 			</td>
 		</tr>
@@ -266,7 +218,6 @@
 			</td>
             <td>
 				부대별로 돌아가며 자동으로 분석이 되도록 자동화할 수 있었으나, 전 부대에 대한 정보를 얻는 것이 불가능하여 현재 자동화하지 못한 상태입니다.
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
    </tbody>
@@ -276,23 +227,6 @@
 ## 개발 과정
  ### Frontend
  #### Creact-react-app
-<<<<<<< HEAD
-* CRA로 프로젝트를 생성했습니다.
-					
-#### UI Design
-* Bootstrap을 사용해 디자인에 속도를 냈으며 글꼴은 구글 웹폰트를 사용했습니다.
-
-					
- #### 서버와의 통신
-* http-proxy-middleware 라이브러리를 사용해 프록시를 설정하여 웹서버와 통신하도록 구현했습니다.
-
-#### Deploy
-* Paas 서비스인 Netlify를 이용해 배포했으며 배포시 라우팅 문제를 해결하기 위해 _redircets파일을 추가했습니다.
-
- ### WebServer
-
-#### WebServer 소개
-=======
  * CRA로 프로젝트를 생성했습니다.
 					
  #### UI Design
@@ -308,16 +242,11 @@
  ### WebServer
 
  #### WebServer 소개
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
  * 국방신문고의 웹 API 서버를 담당합니다.
  * AWS RDS로 호스팅한 DB에 붙어서 Client의 요청에 맞게 데이터를 주고받는 역할을 합니다. 
 
  #### API mockserver 및 API 명세서 작성
-<<<<<<< HEAD
-  * Frontend와의 개발 속도 차이 등의 이유로 초기에 mockserver 및 API명세서를 작성하였습니다.
-=======
   * Frontend와의 개발 속도 차이 등의 이유로 mockserver 및 명세서를 작성하였습니다.
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
   <table width="100%">
     <thead>
         <tr>
@@ -332,17 +261,10 @@
     <tbody>
         <tr>
             <td>
-<<<<<<< HEAD
-			    <div align="center"><a href="https://user-images.githubusercontent.com/53550707/137880978-0858decd-9136-48cd-bdcb-7ab3491b830a.jpg"><img src="https://user-images.githubusercontent.com/53550707/137880978-0858decd-9136-48cd-bdcb-7ab3491b830a.jpg" width="100%"></a></div>
-            </td>
-            <td>
-				<div align="center"><a href="https://user-images.githubusercontent.com/53550707/137880974-42bea29b-450e-46c4-bee7-e97931287a0f.jpg"><img src="https://user-images.githubusercontent.com/53550707/137880974-42bea29b-450e-46c4-bee7-e97931287a0f.jpg" width="80%""></a></div>
-=======
 			    <div align="center"><a href="./apiserver.jpg"><img src="./apiserver.jpg" width="100%"></a></div>
             </td>
             <td>
 				<div align="center"><a href="./api.jpg"><img src="./api.jpg" width="80%""></a></div>
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 			</td>
 		</tr>
         <tr>
@@ -356,17 +278,6 @@
    </tbody>
 </table>
 
-<<<<<<< HEAD
-#### AWS RDS DB호스팅
- * AWS에서 제공하는 RDS 서비스를 이용하여 MYSQL DB 서버를 호스팅했습니다.
- <img src="https://user-images.githubusercontent.com/53550707/137880497-b6e15599-d37c-46a9-86b3-483e345f9feb.png" width="80%">
-
-#### 핵심 엔티티 ERD 설계
- <img src="https://user-images.githubusercontent.com/53550707/137879866-49f72d62-aa4a-4acd-9e77-19945da9d138.png" width="80%">
- 
-
-#### JPA 엔티티 
-=======
  #### AWS RDS DB호스팅
  * AWS에서 제공하는 RDS 서비스를 이용하여 MYSQL DB 서버를 호스팅했습니다.
  <img src="https://user-images.githubusercontent.com/53550707/137880497-b6e15599-d37c-46a9-86b3-483e345f9feb.png" width="80%">
@@ -375,7 +286,6 @@
  <img src="https://user-images.githubusercontent.com/53550707/137879866-49f72d62-aa4a-4acd-9e77-19945da9d138.png" width="80%">
  
  #### JPA 엔티티 
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
  * 설계한 ERD를 바탕으로 프로젝트 domain 패키지에 JPA 엔티티를 구현했습니다.
 
 #### 웹 계층별 구현
@@ -412,9 +322,6 @@
   * 가져온 키워드 또한 형태소 분석기로 쪼갠 후 게시글, 댓글에서 해당 키워드들이 존재하는지 분석합니다.
   * 이후 결과를 정리하여 DB의 Analysis_attention_keywords 테이블에 저장합니다.
 
-<<<<<<< HEAD
- 
-=======
  ### DB
  ### 스키마 제작
   * DB를 이용하는 파트가 Analysis, Webserver이기에 두 파트 개발자(이형우, 정성훈)의 협의 아래 스키마를 제작하였습니다.
@@ -422,35 +329,22 @@
 
  ### DB제작
   * AWS RDS를 활용하여, DBMS로 MySQL을 사용하여 제작하였다.
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 
 
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
-<<<<<<< HEAD
-=======
 ### For Users
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 * ECMAScript 6 지원 브라우저 사용
 * 권장: Google Chrome 버젼 77 이상
 
 ## 기술 스택 (Technique Used) 
 ### Server(back-end)
-<<<<<<< HEAD
-#### WebServer  
-- Programming language : java(jdk-11.0.8)  
-- Framework : SpringBoot(2.5.4)  
-- build : Gradle(7.1.1)  
-- Orm : JPA  
-- Deploy at Heroku
-=======
 #### WebServer
  - Programming language : java(jdk-11.0.8)  
  - Framework : SpringBoot(2.5.4)  
  - build : Gradle(7.1.1)  
  - ORM : JPA  
  - Deploy at Heroku
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 
 #### Analysis Server
  - Programming language : Python 3.8.6
@@ -462,19 +356,6 @@
  - DBMS : MySQL
  - Deploy at AWS RDS
  
-<<<<<<< HEAD
-#### Front-end  
-- Programming Language : javascript  
-- Framework : React.js  
-- UI : Bootstrap(3.3.7)  
-- Deploy at Netlify
-
-## 설치 안내 (Installation Process)
-
-
-### Frontend  
-```bash  
-=======
 ### Front-end 
  - Programming Language : javascript  
  - Framework : React.js  
@@ -492,7 +373,6 @@
 
 ### Frontend
 ```bash
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 # armysinmungo 프로젝트 클론  
 $ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
@@ -514,14 +394,8 @@ $ npm run start
 $ npm run build  
 ```
 
-<<<<<<< HEAD
-
-### Backend : Webserver  
-```bash  
-=======
 ### Backend : Webserver
 ```bash
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 # armysinmungo 프로젝트 클론  
 $ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
@@ -594,10 +468,6 @@ $ pip install tweepy==3.10.0
 ```
 
 ## 프로젝트 사용법 (Getting Started)
-<<<<<<< HEAD
-=======
-
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 ### Frontend
 #### 회원가입 및 로그인
   <table width="100%">
@@ -695,115 +565,6 @@ $ pip install tweepy==3.10.0
    </tbody>
 </table>	
 
-<<<<<<< HEAD
-
-					
-### Backend : Webserver  
-#### DB 연결하기
-```java
-# backend/armysinmungo/src/main/resources/application.properties파일의 Datasource 설정([1], [2], [3] 부분)
-
-#DB
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.url=[1]
-spring.datasource.username=[2]
-spring.datasource.password=[3]
-
-#JPA
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.format_sql=true
-logging.level.org.hibernate.type.descriptor.sql=trace
-spring.jpa.show-sql=true
-spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
-
-spring.datasource.hikari.connection-test-query= select 1
-
-spring.devtools.livereload.enabled=false
-spring.devtools.restart.enabled=false
-
-server.port=8080
-```
-
-#### 엔티티 및 테이블 추가
-* spring.jpa.hibernate.ddl-auto=update 설정으로 인해 엔티티 구현시 테이블 자동 생성
-* domain 패키지에 엔티티 생성권장
-
-#### 추가 기능 개발
-* web / service / repository /domain 계층별로 패키지가 나누어져 있으므로 각 패키지에 맞는 클래스를 생성하여 추가 기능 개발
-
-
-
-## 팀 정보 (Team Information)
-<table width="100%">
-    <thead>
-        <tr>
-            <th style="text-align:center" width="10%">관등성명</th>
-            <th style="text-align:center" width="15%">소속</th>
-            <th style="text-align:center"  width="25%">소개</th>
-            <th width="15%" style="text-align:center">Github</th>
-            <th width="15%" style="text-align:center">E-mail</th>
-            <th width="20%" style="text-align:center">역할</th>
-        </tr> 
-    </thead>
-    <tbody>	
-        <tr>
-            <td width="10%" align="center">일병 김강년</td>
-            <td width="15%" align="center">국직<br>국군수송사령부</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상명대학교&nbsp;융합공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SW융합학부&nbsp;컴퓨터과학전공</td>
-            <td width="15%" align="center">	
-                <a href="https://github.com/pop7523">
-                <img src="https://img.shields.io/badge/pop7523-655ced?style=social&logo=github"/>
-                </a>
-            </td>
-            <td width="15%" align="center">
-                <a href="rkdsus7@naver.com"><img src="https://img.shields.io/static/v1?label=&message=rkdsus7@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
-            </td>
-            <td width="20%" align="center">Team Leader, UI making</td>
-        </tr>       
-        <tr>
-            <td width="10%" align="center">상병 이형우</td>
-            <td width="15%" align="center">육군<br>5군단 5포병여단</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교&nbsp;소프트웨여융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
-            <td width="15%" align="center">	
-                <a href="https://github.com/TheBreeze129">
-                <img src="https://img.shields.io/badge/TheBreeze129-655ced?style=social&logo=github"/>
-                </a>
-            </td>
-            <td width="15%" align="center">
-                <a href="lijiongyu0129@gmail.com"><img src="https://img.shields.io/static/v1?label=&message=lijiongyu0129@gmail.com&color=lightblue&style=flat-square&logo=gmail"></a>
-            </td>
-            <td width="20%" align="center">Frontend, Backend : Analysis, DB</td>
-        </tr>        
-        <tr>
-            <td width="10%" align="center">상병 정성훈</td>
-            <td width="15%" align="center">공군<br>정보쳬계관리단</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교&nbsp;소프트웨어융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
-            <td width="15%" align="center">	
-                <a href="https://github.com/swa07016">
-                <img src="https://img.shields.io/badge/swal07016-655ced?style=social&logo=github"/>
-                </a>
-            </td>
-            <td width="15%" align="center">
-                <a href="swa07016@naver.com"><img src="https://img.shields.io/static/v1?label=&message=swa07016@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
-            </td>
-            <td width="20%" align="center">Frontend, Backend : Webserver, DB</td>
-        </tr>        
-        <tr>
-        <td width="10%" align="center">상병 송지웅</td>
-        <td width="15%" align="center">육군<br>7군단 수도기계화보병사단</td>
-        <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교;&nbsp;공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학전공</td>
-        <td width="15%" align="center">	
-            <a href="https://github.com/shortboy7">
-            <img src="https://img.shields.io/badge/shortboy7-655ced?style=social&logo=github"/>
-            </a>
-        </td>
-        <td width="15%" align="center">
-        <a href="thdwldnd7@naver.com"><img src="https://img.shields.io/static/v1?label=&message=thdwldnd7@naver.com&color=lightblue&style=flat-square&logo=naver"></a>
-        <td width="20%" align="center">Frontend</td>
-        </tr>
-    </tbody>
-</table>
-=======
 ### Backend : Webserver  
  #### DB 연결하기
  ```java
@@ -863,7 +624,6 @@ server.port=8080
       국방신문고 시스템은 프론트, 웹서버, DB, 분석서버가 전부 분리된 채 서로 정보만 주고받는 형태로 유지보수, 기능 추가 등에 용이성을 가집니다.
       소원수리(개인고충 및 부대발전에 대한 제언) 기능을 확장하여 지휘관이 예하 장병들에 대해 설문조사를 실시할 수 있고, 부대 공지사항 등을 국방신문고를 통해 전파할 수 있을 것입니다.
       또한 커뮤니티가 활성화 되었을 때, 분석 기능의 추가를 통해 수많은 정보를 얻어낼 수 있을 것으로 보여집니다. 특히 머신러닝을 추가적으로 활용한다면 장병들이 가진 공통적인 불만이나 고충을 손쉽게 파악할 수 있을 것입니다. 용사가 아니기에 쉽게 알 수 없는 용사들의 고충을 확인하고, 조치할 수 있을 것입니다
->>>>>>> 45bf372fe5d441a52db5880db2829896fca29bcb
 
 	
 
