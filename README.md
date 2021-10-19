@@ -164,11 +164,11 @@
 
 #### AWS RDS DB호스팅
  * AWS에서 제공하는 RDS 서비스를 이용하여 MYSQL DB 서버를 호스팅했습니다.
- * 사진 집어넣기
+ <img src="https://user-images.githubusercontent.com/53550707/137880497-b6e15599-d37c-46a9-86b3-483e345f9feb.png" width="80%">
 
 #### 핵심 엔티티 ERD 설계
- * 사진 집어넣기
- * 테이블들 간략한 설명
+ <img src="https://user-images.githubusercontent.com/53550707/137879866-49f72d62-aa4a-4acd-9e77-19945da9d138.png" width="80%">
+ 
 
 #### JPA 엔티티 
  * 설계한 ERD를 바탕으로 프로젝트 domain 패키지에 JPA 엔티티를 구현했습니다.
@@ -179,8 +179,6 @@
  * service : controller와 repository의 중간 영역으로 비즈니스 로직들 및 트랜잭션을 담당합니다.
  * repository : Spring Data JPA에서 제공하는 인터페이스를 상속받아 사용했으며 DB접근을 담당합니다.
  * domain : Entity들이 모여있는 패키지입니다.
-
- # 웹서버 개발과정 부탁드려요...
 
 
  ### Analysis
