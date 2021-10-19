@@ -1,6 +1,7 @@
 
 # 국방신문고 : Armysinmungo
-![Logo](./logo.jpg)
+![logo](https://user-images.githubusercontent.com/53550707/137880745-523122de-5ba9-401b-a301-33be9fc13ed0.jpg)
+
 
 <br>
 
@@ -145,10 +146,10 @@
     <tbody>
         <tr>
             <td>
-			    <div align="center"><a href="./apiserver.jpg"><img src="./apiserver.jpg" width="100%"></a></div>
+			    <div align="center"><a href="https://user-images.githubusercontent.com/53550707/137880978-0858decd-9136-48cd-bdcb-7ab3491b830a.jpg"><img src="https://user-images.githubusercontent.com/53550707/137880978-0858decd-9136-48cd-bdcb-7ab3491b830a.jpg" width="100%"></a></div>
             </td>
             <td>
-				<div align="center"><a href="./api.jpg"><img src="./api.jpg" width="80%""></a></div>
+				<div align="center"><a href="https://user-images.githubusercontent.com/53550707/137880974-42bea29b-450e-46c4-bee7-e97931287a0f.jpg"><img src="https://user-images.githubusercontent.com/53550707/137880974-42bea29b-450e-46c4-bee7-e97931287a0f.jpg" width="80%""></a></div>
 			</td>
 		</tr>
         <tr>
