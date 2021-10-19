@@ -385,6 +385,38 @@ $ pip install tweepy==3.10.0
    </tbody>
 </table>
 
+#### 글쓰기 및 댓글쓰기 
+ <table width="100%">
+    <thead>
+        <tr>
+			<th style="text-align:center" width="50%">
+				<h4>글쓰기</h4>
+			</th>
+            <th style="text-align:center" width="50%">
+				<h4>댓글쓰기</h4>
+			</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+			    <div align="center"><a href="https://user-images.githubusercontent.com/53550707/137888729-83adb0d2-5806-4968-8345-1c8f61e68a2a.png"><img src="https://user-images.githubusercontent.com/53550707/137888729-83adb0d2-5806-4968-8345-1c8f61e68a2a.png" width="100%"></a></div>
+            </td>
+            <td>
+				<div align="center"><a href="https://user-images.githubusercontent.com/53550707/137888788-ffdfdc8d-691c-4027-9003-3af1b7735fe2.png"><img src="https://user-images.githubusercontent.com/53550707/137888788-ffdfdc8d-691c-4027-9003-3af1b7735fe2.png" width="100%""></a></div>
+			</td>
+		</tr>
+        <tr>
+			<td>
+				게시판 성격에 맞는 글 작성
+			</td>
+            <td>
+				글에 대한 의견 등 댓글 작성
+			</td>
+		</tr>
+   </tbody>
+</table>				
+					
 ### Backend : Webserver  
 #### DB 연결하기
 ```java
