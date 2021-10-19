@@ -415,7 +415,41 @@ $ pip install tweepy==3.10.0
 			</td>
 		</tr>
    </tbody>
-</table>				
+</table>	
+
+#### 소원수리 답변하기 및 빅데이터 통계보기(부대 지휘관)
+<table width="100%">
+    <thead>
+        <tr>
+			<th style="text-align:center" width="50%">
+				<h4>소원수리 답변하기</h4>
+			</th>
+            <th style="text-align:center" width="50%">
+				<h4>빅데이터 통계보기</h4>
+			</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+			    <div align="center"><a href="https://user-images.githubusercontent.com/53550707/137889440-8a7932ee-fa5c-4586-bd37-faecb64f4964.png"><img src="https://user-images.githubusercontent.com/53550707/137889440-8a7932ee-fa5c-4586-bd37-faecb64f4964.png" width="100%"></a></div>
+            </td>
+            <td>
+				<div align="center"><a href="https://user-images.githubusercontent.com/53550707/137889483-cb195256-a4b8-4151-95ec-11c1fb492058.png"><img src="https://user-images.githubusercontent.com/53550707/137889483-cb195256-a4b8-4151-95ec-11c1fb492058.png" width="100%""></a></div>
+			</td>
+		</tr>
+        <tr>
+			<td>
+				병사들이 쓴 소원수리 글에 답변 작성
+			</td>
+            <td>
+				긍부정도 / 키워드 등 데이터 분석 결과 확인
+			</td>
+		</tr>
+   </tbody>
+</table>	
+
+
 					
 ### Backend : Webserver  
 #### DB 연결하기
