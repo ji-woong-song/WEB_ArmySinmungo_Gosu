@@ -225,6 +225,39 @@
 
 
 ## 개발 과정
+ ### 기초 설계
+ * 기초적인 서비스 플로우와 파트별 흐름 구조도를 작성해 보았습니다.
+<table width="100%">
+    <thead>
+        <tr>
+			<th style="text-align:center" width="50%">
+				<h4> 서비스 플로우 </h4>
+			</th>
+            <th style="text-align:center" width="50%">
+				<h4> 파트별 흐름 구조도 </h4>
+			</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+			    <div align="center"><a href="./serviceflow.png"><img src="./serviceflow.png" width="100%"></a></div>
+            </td>
+            <td>
+				<div align="center"><a href="./architecture.png"><img src="./architecture.png" width="100%""></a></div>
+			</td>
+		</tr>
+        <tr>
+			<td>
+				간단한 서비스 플로우입니다.
+			</td>
+            <td>
+				각 파트 별로 어떻게 개발할지, 정보 흐름은 어떤지에 대한 구조도입니다. 각 파트는 정보만 주고받을 뿐 서로 아무런 영향을 끼치지 않습니다. 이로 인해 국방신문고는 두 개 이상의 라이선스를 가집니다.
+			</td>
+		</tr>
+   </tbody>
+</table>
+
  ### Frontend
  #### Creact-react-app
  * CRA로 프로젝트를 생성했습니다.
