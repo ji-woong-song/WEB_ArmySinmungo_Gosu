@@ -121,10 +121,18 @@
 
 ## 개발 과정
  ### Frontend
- #### Frontend UI 제작
+ #### Creact-react-app
+* CRA로 프로젝트를 생성했습니다.
+					
+#### UI Design
+* Bootstrap을 사용해 디자인에 속도를 냈으며 글꼴은 구글 웹폰트를 사용했습니다.
 
- # 프론트 개발과정 부탁드려요...
+					
+ #### 서버와의 통신
+* http-proxy-middleware 라이브러리를 사용해 프록시를 설정하여 웹서버와 통신하도록 구현했습니다.
 
+#### Deploy
+* Paas 서비스인 Netlify를 이용해 배포했으며 배포시 라우팅 문제를 해결하기 위해 _redircets파일을 추가했습니다.
 
  ### WebServer
 
