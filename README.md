@@ -225,7 +225,7 @@
 ### Frontend  
 ```bash  
 # armysinmungo 프로젝트 클론  
-$ git clone [https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git)
+$ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
 # front 프로젝트 경로로 이동  
 $ cd client/armysinmungo-client
@@ -238,7 +238,7 @@ $ sudo apt install npm
 # node 의존성 패키지 설치 (node_modules)  
 $ npm install
 
-# 개발서버 구동 (개발서버 : [http://localhost:3000](http://localhost:3000/))  
+# 개발서버 구동 (개발서버 : http://localhost:3000)  
 $ npm run start
 
 # 빌드 스크립트  
@@ -249,7 +249,7 @@ $ npm run build
 ### Backend : Webserver  
 ```bash  
 # armysinmungo 프로젝트 클론  
-$ git clone [https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git)
+$ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
 # backend 프로젝트 경로로 이동  
 $ cd backend/armysinmungo
@@ -264,7 +264,7 @@ export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
 export PATH=$PATH:$JAVA_HOME/bin
 
 # Gradle 설치  
-$ wget [https://services.gradle.org/distributions/gradle-${VERSION}-bin.zip](https://services.gradle.org/distributions/gradle-$%7BVERSION%7D-bin.zip) -P /tmp  
+$ wget https://services.gradle.org/distributions/gradle-${VERSION}-bin.zip -P /tmp  
 $ sudo unzip -d /opt/gradle /tmp/gradle-${VERSION}-bin.zip  
 $ sudo ln -s /opt/gradle/gradle-${VERSION} /opt/gradle/latest
 
@@ -274,7 +274,7 @@ export GRADLE_HOME=/opt/gradle/latest
 export PATH=${GRADLE_HOME}/bin:${PATH}
 
 # 빌드 스크립트  
-$ gradle build# 개발서버 구동 (개발서버 : [http://localhost:8080](http://localhost:8080/))  
+$ gradle build# 개발서버 구동 (개발서버 : http://localhost:8080)  
 $ gradle bootRun  
 ```
 
