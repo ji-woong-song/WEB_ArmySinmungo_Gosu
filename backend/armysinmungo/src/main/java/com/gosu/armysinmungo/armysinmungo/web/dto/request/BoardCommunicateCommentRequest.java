@@ -7,5 +7,6 @@ import lombok.Getter;
 public class BoardCommunicateCommentRequest {
     private Long mension = 0L;
     private String content;
+    private String milNum;
     private Long id;
 }

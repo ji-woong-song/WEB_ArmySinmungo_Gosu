@@ -39,7 +39,7 @@ public class BoardDebateCommentController {
     @PostMapping("/board/debate/comment")
     public ResponseEntity<BasicResponse> postBoardDebateComment(@RequestBody BoardDebateCommentRequest boardDebateCommentRequest) {
 
-        UserInfo userInfo = userInfoService.findById(54321L);
+        UserInfo userInfo = userInfoService.findByMilNum(boardDebateCommentRequest.getMilNum());
         BoardDebateTheme boardDebateTheme = boardDebateThemeService.findById(boardDebateCommentRequest.getId());
 
         BoardDebateComment boardDebateComment =

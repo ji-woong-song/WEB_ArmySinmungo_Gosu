@@ -36,7 +36,7 @@ public class BoardCommunicateCommentController {
     @PostMapping("/board/communicate/comment")
     public ResponseEntity<BasicResponse> postBoardCommunicateComment(@RequestBody BoardCommunicateCommentRequest boardCommunicateCommentRequest) {
 
-        UserInfo userInfo = userInfoService.findById(54321L);
+        UserInfo userInfo = userInfoService.findByMilNum(boardCommunicateCommentRequest.getMilNum());
         BoardCommunicatePost boardCommunicatePost = boardCommunicatePostService.findById(boardCommunicateCommentRequest.getId());
 
         BoardCommunicateComment boardCommunicateComment =

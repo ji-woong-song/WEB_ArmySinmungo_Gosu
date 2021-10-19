@@ -60,7 +60,7 @@ public class BoardFreePostController {
     @PostMapping("/board/free/post")
     public ResponseEntity<BasicResponse> postBoardFreePost(@RequestBody BoardFreePostRequest boardFreePostRequest) {
               
-        UserInfo userInfo = UserInfoService.findById(54321L); // 하드코딩 -> 실사용자로 변경
+        UserInfo userInfo = UserInfoService.findByMilNum(boardFreePostRequest.getMilNum());
 
         BoardFreePost boardFreePost = 
             BoardFreePost.builder()

@@ -10,4 +10,5 @@ public class BoardDebateCommentRequest {
     private String content;
     private Long id;
     private String agreeDisagree;
+    private String milNum;
 }
