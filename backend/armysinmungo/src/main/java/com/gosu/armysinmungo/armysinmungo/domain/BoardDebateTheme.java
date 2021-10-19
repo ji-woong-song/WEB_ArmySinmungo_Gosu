@@ -21,12 +21,19 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import javax.persistence.EntityListeners;
+
+import com.gosu.armysinmungo.armysinmungo.web.dto.response.BoardPostResponse;
 
 @Entity
 @Table(name = "BOARD_DEBATE_THEME")
-@Builder @Getter
+@Builder @Getter @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)
 public class BoardDebateTheme {
 
     @Id @GeneratedValue
@@ -66,5 +73,22 @@ public class BoardDebateTheme {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_INFO_ID")
     private UserInfo userInfo;
+
+
+    public BoardPostResponse toBoardPostResponse() {
+        return BoardPostResponse.builder()
+        .id(id)
+        .postNum(postNum)
+        .agreeNum(agreeNum)
+        .category(category)
+        .changedTime(changedTime)
+        .uploadTime(uploadTime)
+        .title(title)
+        .content(content)
+        .tagged(tagged)
+        .userName(userInfo.getUserName())
+        .build();
+    }
+
 }
 
