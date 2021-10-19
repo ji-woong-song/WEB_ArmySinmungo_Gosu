@@ -352,7 +352,41 @@ $ pip install tweepy==3.10.0
 ```
 
 ## 프로젝트 사용법 (Getting Started)
+### Frontend
 
+
+### Backend : Webserver  
+#### DB 연결하기
+```java
+# backend/armysinmungo/src/main/resources/application.properties파일의 Datasource 설정([1], [2], [3] 부분)
+
+#DB
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=[1]
+spring.datasource.username=[2]
+spring.datasource.password=[3]
+
+#JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.format_sql=true
+logging.level.org.hibernate.type.descriptor.sql=trace
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+spring.datasource.hikari.connection-test-query= select 1
+
+spring.devtools.livereload.enabled=false
+spring.devtools.restart.enabled=false
+
+server.port=8080
+```
+
+#### 엔티티 및 테이블 추가
+* spring.jpa.hibernate.ddl-auto=update 설정으로 인해 엔티티 구현시 테이블 자동 생성
+* domain 패키지에 엔티티 생성권장
+
+#### 추가 기능 개발
+* web / service / repository /domain 계층별로 패키지가 나누어져 있으므로 각 패키지에 맞는 클래스를 생성하여 추가 기능 개발
 
 
 
