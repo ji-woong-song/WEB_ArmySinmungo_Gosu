@@ -666,12 +666,13 @@ $ pip install tweepy==3.10.0
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
  ### Webserver
- * [apache-2.0]
+ * [apache-2.0](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE_Webserver)
+ * Copyright 2021 ARMYSINMUNGO_GOSU
  ### Analysis
- * [gpl-3.0+]
+ * [gpl-3.0+](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md
+ * Copyleft
  ### Frontend
- * [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
- ### DB
- * []
+ * [MIT](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md)
+ * Copyright (c) 2021 ARMYSINMUNGO_GOSU
 
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of these licenses.
