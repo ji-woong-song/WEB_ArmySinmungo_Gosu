@@ -63,7 +63,7 @@ public class BoardDebateThemeController {
     @PostMapping("/board/debate/theme")
     public ResponseEntity<BasicResponse> postBoardDebateTheme(@RequestBody BoardDebateThemeRequest boardDebateThemeRequest) {
                 
-        UserInfo userInfo = UserInfoService.findById(54321L);
+        UserInfo userInfo = UserInfoService.findByMilNum(boardDebateThemeRequest.getMilNum());
 
         BoardDebateTheme boardDebateTheme = 
             BoardDebateTheme.builder()

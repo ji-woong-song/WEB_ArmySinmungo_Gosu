@@ -8,4 +8,5 @@ public class BoardCommunicatePostRequest {
     private String content;
     private String category;
     private String tagged;
+    private String milNum;
 }

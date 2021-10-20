@@ -64,7 +64,7 @@ public class BoardCommunicatePostController {
     @PostMapping("/board/communicate/post")
     public ResponseEntity<BasicResponse> postBoardCommunicatePost(@RequestBody BoardCommunicatePostRequest boardCommunicatePostRequest) {
          
-        UserInfo userInfo = UserInfoService.findById(54321L);
+        UserInfo userInfo = UserInfoService.findByMilNum(boardCommunicatePostRequest.getMilNum());
 
         BoardCommunicatePost boardCommunicatePost = 
             BoardCommunicatePost.builder()
