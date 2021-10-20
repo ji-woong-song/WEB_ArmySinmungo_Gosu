@@ -361,6 +361,7 @@
   * DB로부터 가져온 게시글과 댓글 데이터를 Naver Clova Sentiment API를 활용해 분석을 진행합니다.
   * POST 방식으로 해당 API와 소통합니다.
   * API에서 전송받은 분석결과를 취합하고 정리하여 DB의 Analysis_posnegneu 테이블에 저장합니다.
+  * 결과는 게시글 및 댓글에서 총 몇 퍼센트의 문장이 긍정적, 부정적, 중립적이었는지입니다.
   * Naver Clova Sentimet API 참고 : https://www.ncloud.com/product/aiService/clovaSentiment
 
  #### 형태소 분석기
@@ -370,20 +371,21 @@
  #### 많이 나온 키워드 순위
   * 형태소 분석기로 쪼갠 결과물 중 보통 명사, 고유 명사, 대명사, 동사만 추출하여 어떠한 키워드가 많이 나왔는지 분석합니다.
   * 조사 등 의미없는 품사는 제외하고 분석하였습니다.
+  * 어떠한 키워드가 몇 번 나왔는지, 순위는 어떤지를 결과로 출력합니다.
   * 이후 결과를 정리하여 DB의 Analysis_keyword_all 테이블에 저장합니다.
 
  #### 지휘관이 지정한 키워드 탐색
   * DB의 Analysis_attention_keywords에서 지휘관이 지정한 키워드를 가져옵니다. 이때 지휘관은 최대 10개의 키워드를 입력할 수 있습니다.
   * 가져온 키워드 또한 형태소 분석기로 쪼갠 후 게시글, 댓글에서 해당 키워드들이 존재하는지 분석합니다.
+  * 특정 키워드가 몇 번 나왔고, 어느 글에서 나왔는지를 결과로 출력합니다.
   * 이후 결과를 정리하여 DB의 Analysis_attention_keywords 테이블에 저장합니다.
 
  ### DB
  ### 스키마 제작
   * DB를 이용하는 파트가 Analysis, Webserver이기에 두 파트 개발자(이형우, 정성훈)의 협의 아래 스키마를 제작하였습니다.
-  * 스키마 완료본은 다음과 같습니다.
 
  ### DB제작
-  * AWS RDS를 활용하여, DBMS로 MySQL을 사용하여 제작하였다.
+  * AWS RDS를 활용하여, DBMS로 MySQL을 사용하여 제작하였습니다.
 
 
 
@@ -698,5 +700,5 @@ $ pip install tweepy==3.10.0
  * [MIT](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md)
  * Copyright (c) 2021 ARMYSINMUNGO_GOSU
 
-This project is licensed under the terms of these licenses.
+This project is licensed under the terms of these licenses. (It is different for each part.)
 apache-2.0 (Webserver), gpl-3.0 (Analysis), MIT (Frontend)
