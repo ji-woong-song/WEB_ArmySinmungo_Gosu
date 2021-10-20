@@ -1,0 +1,23 @@
+/ /index.html 200
+/communicate /index.html 200
+/communicate-write /index.html 200
+/communicate-post /index.html 200
+
+/free /index.html 200
+/free-write /index.html 200
+/free-post /index.html 200
+
+/debate /index.html 200
+/debate-write /index.html 200
+/debate-post /index.html 200
+
+/letter /index.html 200
+/letter-write /index.html 200
+/letter-post /index.html 200
+
+/analysis /index.html 200
+
+/signup /index.html 200
+/login /index.html 200
+
+/board/*  https://armysinmungo-api.herokuapp.com/board/:splat  200
