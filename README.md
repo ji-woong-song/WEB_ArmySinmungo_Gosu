@@ -225,7 +225,7 @@
 			    <div align="center"><a href="./Picture/analysis_main.jpg"><img src="./Picture/analysis_main.jpg" width="100%"></a></div>
             </td>
             <td>
-			<div align="center"><a href="./Picture/analysis.jpg"><img src="./Picture/analysis.jpg" width="100%""></a></div>
+			<div align="center"><a href="./Picture/anlaysis.jpg"><img src="./Picture/anlaysis.jpg" width="100%""></a></div>
 		</td>
 	</tr>
         <tr>
