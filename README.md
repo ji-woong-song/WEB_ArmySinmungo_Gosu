@@ -97,7 +97,11 @@
 
 ## 기능 설명
 &nbsp;&nbsp;국방신문고는 문제해결을 돕기 위해 소통할 수 있는 게시판을 제공합니다. 그리고 게시되는 글들을 분석하여 제공함으로써 지휘관이 제기된 문제를 해결할 수 있도록 돕습니다.
+
 <br>
+
+&nbsp;&nbsp;시연영상 : https://drive.google.com/file/d/1WPe6bqS6Df5dhpxHo1GD1ELHgEJXhbDn/view?usp=sharing
+
 <table width="100%">
     <thead>
         <tr>
@@ -676,7 +680,7 @@ $ pip install tweepy==3.10.0
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
  ### Webserver
  * [apache-2.0](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE_Webserver)
- * Copyright 2021 ARMYSINMUNGO_GOSU
+ * Copyright (c) 2021 ARMYSINMUNGO_GOSU
  ### Analysis
  * [gpl-3.0+](https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/blob/develop/LICENSE-Analysis.md)
  * Copyleft
