@@ -39,7 +39,7 @@
         <tr>
             <td width="10%" align="center">일병 김강년</td>
             <td width="15%" align="center">국직<br>국군수송사령부</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상명대학교&nbsp;융합공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SW융합학부&nbsp;컴퓨터과학전공</td>
+            <td width="25%">상명대학교&nbsp;융합공과대학<br>SW융합학부&nbsp;컴퓨터과학전공</td>
             <td width="15%" align="center">	
                 <a href="https://github.com/pop7523">
                 <img src="https://img.shields.io/badge/pop7523-655ced?style=social&logo=github"/>
@@ -53,7 +53,7 @@
         <tr>
             <td width="10%" align="center">상병 이형우</td>
             <td width="15%" align="center">육군<br>5군단 5포병여단</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교&nbsp;소프트웨여융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="25%">경희대학교&nbsp;소프트웨여융합대학<br>컴퓨터공학과</td>
             <td width="15%" align="center">	
                 <a href="https://github.com/TheBreeze129">
                 <img src="https://img.shields.io/badge/TheBreeze129-655ced?style=social&logo=github"/>
@@ -67,7 +67,7 @@
         <tr>
             <td width="10%" align="center">상병 정성훈</td>
             <td width="15%" align="center">공군<br>정보쳬계관리단</td>
-            <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경희대학교&nbsp;소프트웨어융합대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학과</td>
+            <td width="25%">경희대학교&nbsp;소프트웨어융합대학<br>컴퓨터공학과</td>
             <td width="15%" align="center">	
                 <a href="https://github.com/swa07016">
                 <img src="https://img.shields.io/badge/swal07016-655ced?style=social&logo=github"/>
@@ -81,7 +81,7 @@
         <tr>
         <td width="10%" align="center">상병 송지웅</td>
         <td width="15%" align="center">육군<br>7군단 수도기계화보병사단</td>
-        <td width="25%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동국대학교;&nbsp;공과대학<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;컴퓨터공학전공</td>
+        <td width="25%">동국대학교;&nbsp;공과대학<br>컴퓨터공학전공</td>
         <td width="15%" align="center">	
             <a href="https://github.com/shortboy7">
             <img src="https://img.shields.io/badge/shortboy7-655ced?style=social&logo=github"/>
