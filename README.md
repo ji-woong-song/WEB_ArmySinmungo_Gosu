@@ -1,5 +1,5 @@
 # 국방신문고 : Armysinmungo
-![Logo](./logo.jpg)
+![Logo](./Picture/logo.jpg)
 
 <br>
 
