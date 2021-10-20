@@ -226,9 +226,9 @@
 			    <div align="center"><a href="./Picture/analysis_main.jpg"><img src="./Picture/analysis_main.jpg" width="100%"></a></div>
             </td>
             <td>
-				<div align="center"><a href="./Picture/analysis.jpg"><img src="./Picture/analysis.jpg" width="100%""></a></div>
-			</td>
-		</tr>
+			<div align="center"><a href="./Picture/analysis.jpg"><img src="./Picture/analysis.jpg" width="100%""></a></div>
+		</td>
+	</tr>
         <tr>
 			<td>
 				분석 프로그램은 VM 상에서 상시 가동됩니다. 관리자는 원하는 부대에 대해 실시간으로 분석을 실행할 수 있습니다.
