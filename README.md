@@ -419,7 +419,7 @@
 $ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
 # front 프로젝트 경로로 이동  
-$ cd client/armysinmungo-client
+$ cd WEB(FE)/client/armysinmungo-client
 
 # npm 설치  
 $ sudo apt update  
@@ -442,7 +442,7 @@ $ npm run build
 $ git clone https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu.git
 
 # backend 프로젝트 경로로 이동  
-$ cd backend/armysinmungo
+$ cd WEB(BE)/backend/armysinmungo
 
 # JDK(11.0.8) 설치  
 $ sudo apt-get update  
