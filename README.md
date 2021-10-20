@@ -196,8 +196,6 @@
             <td>
 			    <div align="center"><a href="./Picture/analysis.jpg"><img src="./Picture/analysis.jpg" width="100%"></a></div>
             </td>
-
-		</tr>
         <tr>
 			<td>
 				지휘관은 예하 장병이 올린 글에 대한 분석 결과를 볼 수 있습니다. 지휘관이 지정한 키워드에 대한 탐색 결과부터 예하 장병이 어떠한 키워드를 많이 썼는지, 예하 장병이 쓴 글이 긍정적인지, 부정적인지도 알 수 있습니다.
