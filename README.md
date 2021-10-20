@@ -682,3 +682,4 @@ $ pip install tweepy==3.10.0
  * Copyright (c) 2021 ARMYSINMUNGO_GOSU
 
 This project is licensed under the terms of these licenses.
+apache-2.0 (Webserver), gpl-3.0 (Analysis), MIT (Frontend)
