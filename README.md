@@ -194,7 +194,7 @@
 			    <div align="center"><a href="./Picture/analysis_soldier.jpg"><img src="./Picture/analysis_soldier.jpg" width="100%"></a></div>
             </td>
             <td>
-			    <div align="center"><a href="./Picture/analysis.jpg"><img src="./Picture/analysis.jpg" width="100%"></a></div>
+			    <div align="center"><a href="./Picture/analysis_command.jpg"><img src="./Picture/analysis_command.jpg" width="100%"></a></div>
             </td>
         <tr>
 			<td>
