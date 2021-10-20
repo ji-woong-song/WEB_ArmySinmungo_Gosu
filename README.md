@@ -3,6 +3,14 @@
 
 <br>
 
+![version](https://img.shields.io/badge/version-demo-orange)
+[![GitHub contributors](https://img.shields.io/github/contributors/osamhack2021/WEB_ArmySinmungo_Gosu.svg)(https://github.com/osamhack2021/WEB_ArmySinmungo_Gosu/graphs/contributors)
+[![code quality](https://www.codefactor.io/Content/badges/A.svg)](https://www.codefactor.io/repository/github/osamhack2021/WEB_ArmySinmungo_Gosu)
+[![GitHub commit](https://img.shields.io/github/last-commit/osamhack2021/WEB_ArmySinmungo_Gosu.svg)](https://github.com/osamhack2021/WEB_ArmySinmungo_Gosu/pulse)
+[![GitHub commit per week](https://img.shields.io/github/commit-activity/w/osamhack2021/WEB_ArmySinmungo_Gosu.svg)](https://github.com/osamhack2021/WEB_ArmySinmungo_Gosu/pulse)
+
+<br>
+
 ### DEMO : https://armysinmungo.netlify.app/
 #### 접속 ID, PW (회원가입 기능도 작동됩니다.)
  * 지휘관 : ID 20-12345  PW 12345
