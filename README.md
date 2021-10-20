@@ -27,7 +27,7 @@
 <table width="100%">
     <thead>
         <tr>
-            <th style="text-align:center" width="10%">관등성명</th>
+            <th style="text-align:center" width="10%">관등<br>성명</th>
             <th style="text-align:center" width="15%">소속</th>
             <th style="text-align:center"  width="25%">소개</th>
             <th width="15%" style="text-align:center">Github</th>
