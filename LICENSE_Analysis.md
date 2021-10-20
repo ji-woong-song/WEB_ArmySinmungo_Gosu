@@ -1,4 +1,7 @@
-                    GNU GENERAL PUBLIC LICENSE
+This License apply at WEB_ARMYSINMUNGO_GOSU/WEB(BE)/Analysis (Github repositaty, https://github.com/osamhack2021/WEB_CLOUD_ArmySinmungo_Gosu/tree/main/WEB(BE)/Analysis)
+
+
+                       GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
