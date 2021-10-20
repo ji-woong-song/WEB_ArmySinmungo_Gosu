@@ -4,7 +4,7 @@
 <br>
 
 ![version](https://img.shields.io/badge/version-demo-orange)
-[![GitHub contributors](https://img.shields.io/github/contributors/osamhack2021/WEB_ArmySinmungo_Gosu.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/osamhack2021/WEB_ArmySinmungo_Gosu.svg)
 [![code quality](https://www.codefactor.io/Content/badges/A.svg)](https://www.codefactor.io/repository/github/osamhack2021/WEB_ArmySinmungo_Gosu)
 [![GitHub commit](https://img.shields.io/github/last-commit/osamhack2021/WEB_ArmySinmungo_Gosu.svg)](https://github.com/osamhack2021/WEB_ArmySinmungo_Gosu/pulse)
 [![GitHub commit per week](https://img.shields.io/github/commit-activity/w/osamhack2021/WEB_ArmySinmungo_Gosu.svg)](https://github.com/osamhack2021/WEB_ArmySinmungo_Gosu/pulse)
