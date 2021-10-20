@@ -15,6 +15,8 @@
 #### 접속 ID, PW (회원가입 기능도 작동됩니다.)
  * 지휘관 : ID 20-12345  PW 12345
  * 병사  : ID 20-12345678  PW 12345678
+### 📺 [시연 영상](https://drive.google.com/file/d/1WPe6bqS6Df5dhpxHo1GD1ELHgEJXhbDn/view?usp=sharing)
+### 📋 [발표 자료 (PDF)](https://drive.google.com/file/d/1n-tXI0QDTU1_LKS6gEq28iAOytaFxQ88/view?usp=sharing)
 
 <br>
 
@@ -108,7 +110,7 @@
 
 <br>
 
-&nbsp;&nbsp;시연영상 : https://drive.google.com/file/d/1WPe6bqS6Df5dhpxHo1GD1ELHgEJXhbDn/view?usp=sharing
+
 
 <table width="100%">
     <thead>
